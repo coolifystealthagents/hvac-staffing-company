@@ -1,0 +1,13 @@
+{
+  "site": "HVAC Staffing Company",
+  "status": "local_verified",
+  "launchArticle": "hvac-office-manager-vs-hvac-va",
+  "preference": "fractional_vs_va",
+  "topics": [
+    {
+      "slug": "hvac-office-manager-vs-hvac-va",
+      "title": "HVAC office manager vs HVAC VA",
+      "state": "local_verified"
+    }
+  ]
+}
