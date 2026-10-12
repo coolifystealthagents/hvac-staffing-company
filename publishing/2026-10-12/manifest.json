@@ -1,0 +1,184 @@
+{
+  "site": "HVACStaffingCompany.com",
+  "canonicalDomain": "https://hvacstaffingcompany.com",
+  "repository": "coolifystealthagents/hvac-staffing-company",
+  "branch": "main",
+  "baseSha": "e38999ea200437a76b0349c81389e974124b63d3",
+  "publicationDate": "2026-10-12",
+  "counts": {
+    "blog": 12,
+    "research": 5,
+    "total": 17
+  },
+  "registryPaths": [
+    "lib/october-12-content.ts",
+    "lib/content.ts"
+  ],
+  "routePaths": [
+    "app/blog/[slug]/page.tsx",
+    "app/research/[slug]/page.tsx"
+  ],
+  "indexPaths": [
+    "app/blog/page.tsx",
+    "app/research/page.tsx"
+  ],
+  "sidebarPaths": [
+    "app/blog/[slug]/page.tsx",
+    "app/research/[slug]/page.tsx"
+  ],
+  "items": [
+    {
+      "section": "Blog",
+      "slug": "hvac-no-cool-call-intake-triage-record",
+      "title": "Build an HVAC No-Cool Call Intake Record",
+      "publicationDate": "2026-10-12",
+      "sourcePath": "lib/october-12-content.ts",
+      "thumbnailPath": "public/october-12-2026/hvac-no-cool-call-intake-triage-record.svg",
+      "route": "/blog/hvac-no-cool-call-intake-triage-record"
+    },
+    {
+      "section": "Blog",
+      "slug": "hvac-refrigerant-cylinder-return-documentation",
+      "title": "Control Refrigerant Cylinder Return Documentation",
+      "publicationDate": "2026-10-12",
+      "sourcePath": "lib/october-12-content.ts",
+      "thumbnailPath": "public/october-12-2026/hvac-refrigerant-cylinder-return-documentation.svg",
+      "route": "/blog/hvac-refrigerant-cylinder-return-documentation"
+    },
+    {
+      "section": "Blog",
+      "slug": "commercial-rooftop-unit-access-coordination",
+      "title": "Coordinate Commercial Rooftop Unit Access",
+      "publicationDate": "2026-10-12",
+      "sourcePath": "lib/october-12-content.ts",
+      "thumbnailPath": "public/october-12-2026/commercial-rooftop-unit-access-coordination.svg",
+      "route": "/blog/commercial-rooftop-unit-access-coordination"
+    },
+    {
+      "section": "Blog",
+      "slug": "hvac-after-hours-dispatch-coverage-board",
+      "title": "Run an HVAC After-Hours Dispatch Coverage Board",
+      "publicationDate": "2026-10-12",
+      "sourcePath": "lib/october-12-content.ts",
+      "thumbnailPath": "public/october-12-2026/hvac-after-hours-dispatch-coverage-board.svg",
+      "route": "/blog/hvac-after-hours-dispatch-coverage-board"
+    },
+    {
+      "section": "Blog",
+      "slug": "hvac-equipment-serial-model-photo-verification",
+      "title": "Verify HVAC Equipment Model and Serial Photos",
+      "publicationDate": "2026-10-12",
+      "sourcePath": "lib/october-12-content.ts",
+      "thumbnailPath": "public/october-12-2026/hvac-equipment-serial-model-photo-verification.svg",
+      "route": "/blog/hvac-equipment-serial-model-photo-verification"
+    },
+    {
+      "section": "Blog",
+      "slug": "maintenance-agreement-asset-roster-reconciliation",
+      "title": "Reconcile a Maintenance Agreement Asset Roster",
+      "publicationDate": "2026-10-12",
+      "sourcePath": "lib/october-12-content.ts",
+      "thumbnailPath": "public/october-12-2026/maintenance-agreement-asset-roster-reconciliation.svg",
+      "route": "/blog/maintenance-agreement-asset-roster-reconciliation"
+    },
+    {
+      "section": "Blog",
+      "slug": "hvac-permit-inspection-appointment-coordination",
+      "title": "Coordinate HVAC Permit Inspection Appointments",
+      "publicationDate": "2026-10-12",
+      "sourcePath": "lib/october-12-content.ts",
+      "thumbnailPath": "public/october-12-2026/hvac-permit-inspection-appointment-coordination.svg",
+      "route": "/blog/hvac-permit-inspection-appointment-coordination"
+    },
+    {
+      "section": "Blog",
+      "slug": "hvac-warranty-core-return-deadline-tracker",
+      "title": "Track HVAC Warranty Core Return Deadlines",
+      "publicationDate": "2026-10-12",
+      "sourcePath": "lib/october-12-content.ts",
+      "thumbnailPath": "public/october-12-2026/hvac-warranty-core-return-deadline-tracker.svg",
+      "route": "/blog/hvac-warranty-core-return-deadline-tracker"
+    },
+    {
+      "section": "Blog",
+      "slug": "thermostat-compatibility-question-packet",
+      "title": "Prepare a Thermostat Compatibility Question Packet",
+      "publicationDate": "2026-10-12",
+      "sourcePath": "lib/october-12-content.ts",
+      "thumbnailPath": "public/october-12-2026/thermostat-compatibility-question-packet.svg",
+      "route": "/blog/thermostat-compatibility-question-packet"
+    },
+    {
+      "section": "Blog",
+      "slug": "technician-timecard-job-code-exception-queue",
+      "title": "Manage Technician Timecard Job-Code Exceptions",
+      "publicationDate": "2026-10-12",
+      "sourcePath": "lib/october-12-content.ts",
+      "thumbnailPath": "public/october-12-2026/technician-timecard-job-code-exception-queue.svg",
+      "route": "/blog/technician-timecard-job-code-exception-queue"
+    },
+    {
+      "section": "Blog",
+      "slug": "indoor-air-quality-lead-consent-routing",
+      "title": "Route Indoor Air Quality Leads with Clear Consent",
+      "publicationDate": "2026-10-12",
+      "sourcePath": "lib/october-12-content.ts",
+      "thumbnailPath": "public/october-12-2026/indoor-air-quality-lead-consent-routing.svg",
+      "route": "/blog/indoor-air-quality-lead-consent-routing"
+    },
+    {
+      "section": "Blog",
+      "slug": "seasonal-demand-callback-priority-log",
+      "title": "Build a Seasonal Demand Callback Priority Log",
+      "publicationDate": "2026-10-12",
+      "sourcePath": "lib/october-12-content.ts",
+      "thumbnailPath": "public/october-12-2026/seasonal-demand-callback-priority-log.svg",
+      "route": "/blog/seasonal-demand-callback-priority-log"
+    },
+    {
+      "section": "Research",
+      "slug": "weather-normalized-hvac-dispatch-demand-forecast",
+      "title": "Weather-Normalized HVAC Dispatch Demand Forecast",
+      "publicationDate": "2026-10-12",
+      "sourcePath": "lib/october-12-content.ts",
+      "thumbnailPath": "public/october-12-2026/weather-normalized-hvac-dispatch-demand-forecast.svg",
+      "route": "/research/weather-normalized-hvac-dispatch-demand-forecast"
+    },
+    {
+      "section": "Research",
+      "slug": "hvac-technician-travel-time-buffer-study",
+      "title": "HVAC Technician Travel-Time Buffer Study",
+      "publicationDate": "2026-10-12",
+      "sourcePath": "lib/october-12-content.ts",
+      "thumbnailPath": "public/october-12-2026/hvac-technician-travel-time-buffer-study.svg",
+      "route": "/research/hvac-technician-travel-time-buffer-study"
+    },
+    {
+      "section": "Research",
+      "slug": "maintenance-agreement-renewal-cohort-research",
+      "title": "Maintenance Agreement Renewal Cohort Research",
+      "publicationDate": "2026-10-12",
+      "sourcePath": "lib/october-12-content.ts",
+      "thumbnailPath": "public/october-12-2026/maintenance-agreement-renewal-cohort-research.svg",
+      "route": "/research/maintenance-agreement-renewal-cohort-research"
+    },
+    {
+      "section": "Research",
+      "slug": "parts-delay-customer-update-cadence-experiment",
+      "title": "Parts-Delay Customer Update Cadence Experiment",
+      "publicationDate": "2026-10-12",
+      "sourcePath": "lib/october-12-content.ts",
+      "thumbnailPath": "public/october-12-2026/parts-delay-customer-update-cadence-experiment.svg",
+      "route": "/research/parts-delay-customer-update-cadence-experiment"
+    },
+    {
+      "section": "Research",
+      "slug": "first-visit-hvac-evidence-completeness-study",
+      "title": "First-Visit HVAC Evidence Completeness Study",
+      "publicationDate": "2026-10-12",
+      "sourcePath": "lib/october-12-content.ts",
+      "thumbnailPath": "public/october-12-2026/first-visit-hvac-evidence-completeness-study.svg",
+      "route": "/research/first-visit-hvac-evidence-completeness-study"
+    }
+  ]
+}

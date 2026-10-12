@@ -4,6 +4,7 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
 .design-editorial .hero-visual img{object-position:80% center}
 .design-signal .hero-visual img{object-position:35% center}
+.article-thumbnail{width:calc(100% + 4rem);max-width:none;margin:-2rem -2rem 1.5rem;aspect-ratio:1200/630;border-radius:20px 20px 0 0}.content-card .article-thumbnail{width:calc(100% + 3.4rem);margin:-1.7rem -1.7rem 1.5rem;border-radius:18px 18px 0 0}.article-hero-thumbnail{display:block;width:min(900px,100%);aspect-ratio:1200/630;margin-top:2rem;border-radius:20px}
 .design-craft .hero-visual img{object-position:30% center}
 .design-conversation .hero-visual img{object-position:30% center}
 .design-commerce .hero-visual img{object-position:70% center}
