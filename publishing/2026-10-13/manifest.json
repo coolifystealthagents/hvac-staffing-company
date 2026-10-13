@@ -1,0 +1,186 @@
+{
+  "site": "HVACStaffingCompany.com",
+  "canonicalDomain": "https://hvacstaffingcompany.com",
+  "repository": "coolifystealthagents/hvac-staffing-company",
+  "branch": "main",
+  "baseSha": "64f92d688b84f0d587535dd1eeb6ba4390c7f5b6",
+  "date": "2026-10-13",
+  "counts": {
+    "blog": 12,
+    "research": 5,
+    "total": 17,
+    "thumbnails": 17
+  },
+  "items": [
+    {
+      "kind": "blog",
+      "slug": "generator-interlock-service-precondition-record",
+      "title": "Confirm Generator Interlock Service Preconditions",
+      "sourcePath": "lib/october-13-blog.ts",
+      "thumbnailPath": "public/october-13-2026/generator-interlock-service-precondition-record.svg",
+      "publicationDate": "2026-10-13",
+      "wordCount": 3473,
+      "sha256": "39bd57dadd9cf6ce2dc9b48760938828b7322fd721d15617d610dbedd0c00542"
+    },
+    {
+      "kind": "blog",
+      "slug": "heat-pump-defrost-complaint-evidence-packet",
+      "title": "Prepare a Heat Pump Defrost Complaint Evidence Packet",
+      "sourcePath": "lib/october-13-blog.ts",
+      "thumbnailPath": "public/october-13-2026/heat-pump-defrost-complaint-evidence-packet.svg",
+      "publicationDate": "2026-10-13",
+      "wordCount": 3581,
+      "sha256": "e16514d383ff130e1013758ad9062036546ea2b81b289a87a72ce2cf29d3edfe"
+    },
+    {
+      "kind": "blog",
+      "slug": "commercial-filter-change-service-proof",
+      "title": "Reconcile Commercial Filter Change Service Proof",
+      "sourcePath": "lib/october-13-blog.ts",
+      "thumbnailPath": "public/october-13-2026/commercial-filter-change-service-proof.svg",
+      "publicationDate": "2026-10-13",
+      "wordCount": 3461,
+      "sha256": "2ea449612752e3bca99481e465ca73b2dd919a573f2564d98d49ec8d4e8aeb49"
+    },
+    {
+      "kind": "blog",
+      "slug": "smart-thermostat-remote-access-revocation",
+      "title": "Audit Smart Thermostat Remote Access Revocation",
+      "sourcePath": "lib/october-13-blog.ts",
+      "thumbnailPath": "public/october-13-2026/smart-thermostat-remote-access-revocation.svg",
+      "publicationDate": "2026-10-13",
+      "wordCount": 3485,
+      "sha256": "aa8801069609cdecf028663f62ef5974b79e09580454665b339c714031ab03a8"
+    },
+    {
+      "kind": "blog",
+      "slug": "condensate-drain-overflow-callback-record",
+      "title": "Build a Condensate Drain Overflow Callback Record",
+      "sourcePath": "lib/october-13-blog.ts",
+      "thumbnailPath": "public/october-13-2026/condensate-drain-overflow-callback-record.svg",
+      "publicationDate": "2026-10-13",
+      "wordCount": 3533,
+      "sha256": "36327f3bf1ae838e5e210471b76c74970d4b81b2f694a99849f1c92db2035a86"
+    },
+    {
+      "kind": "blog",
+      "slug": "economizer-inspection-evidence-before-quote",
+      "title": "Verify Economizer Inspection Evidence Before Quote",
+      "sourcePath": "lib/october-13-blog.ts",
+      "thumbnailPath": "public/october-13-2026/economizer-inspection-evidence-before-quote.svg",
+      "publicationDate": "2026-10-13",
+      "wordCount": 3485,
+      "sha256": "c737d00991b608cf0ed85528a9287ccd0e64fb71aab12e95868210915b9c764a"
+    },
+    {
+      "kind": "blog",
+      "slug": "coil-cleaning-occupant-protection-handoff",
+      "title": "Coordinate a Coil Cleaning Occupant Protection Handoff",
+      "sourcePath": "lib/october-13-blog.ts",
+      "thumbnailPath": "public/october-13-2026/coil-cleaning-occupant-protection-handoff.svg",
+      "publicationDate": "2026-10-13",
+      "wordCount": 3521,
+      "sha256": "3925f308dd8d75235cf205c197d00a54727473e69f5411bc15a6ddd4b804c501"
+    },
+    {
+      "kind": "blog",
+      "slug": "compressor-warranty-supplement-request-tracker",
+      "title": "Track Compressor Warranty Claim Supplement Requests",
+      "sourcePath": "lib/october-13-blog.ts",
+      "thumbnailPath": "public/october-13-2026/compressor-warranty-supplement-request-tracker.svg",
+      "publicationDate": "2026-10-13",
+      "wordCount": 3497,
+      "sha256": "fa36e74f137c16d6b9865710051ce9f1725712a5d1790404748c45fa3c3f8992"
+    },
+    {
+      "kind": "blog",
+      "slug": "recovery-machine-calibration-record-reconciliation",
+      "title": "Reconcile Recovery Machine Calibration Records",
+      "sourcePath": "lib/october-13-blog.ts",
+      "thumbnailPath": "public/october-13-2026/recovery-machine-calibration-record-reconciliation.svg",
+      "publicationDate": "2026-10-13",
+      "wordCount": 3449,
+      "sha256": "7557f35392040f79d362b20ae8fbb3f8f186a5c4e9ea39752f30aa2fa407c59b"
+    },
+    {
+      "kind": "blog",
+      "slug": "emergency-cooling-rental-site-readiness",
+      "title": "Prepare an Emergency Cooling Rental Site Readiness Packet",
+      "sourcePath": "lib/october-13-blog.ts",
+      "thumbnailPath": "public/october-13-2026/emergency-cooling-rental-site-readiness.svg",
+      "publicationDate": "2026-10-13",
+      "wordCount": 3581,
+      "sha256": "3a1276b482d72696da05ae1a28979358d1c56ce92b64833e05bd3bc9fb2d701f"
+    },
+    {
+      "kind": "blog",
+      "slug": "duct-leakage-test-documentation-gaps",
+      "title": "Close Duct Leakage Test Documentation Gaps",
+      "sourcePath": "lib/october-13-blog.ts",
+      "thumbnailPath": "public/october-13-2026/duct-leakage-test-documentation-gaps.svg",
+      "publicationDate": "2026-10-13",
+      "wordCount": 3473,
+      "sha256": "d14ed14d1c58e15ee81f346d47f08b37a9b2750dd636b4b588100ce281616976"
+    },
+    {
+      "kind": "blog",
+      "slug": "technician-certification-expiration-alerts",
+      "title": "Validate Technician Certification Expiration Alerts",
+      "sourcePath": "lib/october-13-blog.ts",
+      "thumbnailPath": "public/october-13-2026/technician-certification-expiration-alerts.svg",
+      "publicationDate": "2026-10-13",
+      "wordCount": 3449,
+      "sha256": "1e4bf91ca00734ef1bfc0a9560fa131718aabd4d8256c9b0bb786a943a8cbb90"
+    },
+    {
+      "kind": "research",
+      "slug": "dispatch-priority-reviewer-agreement-study",
+      "title": "Dispatch Priority Reviewer Agreement Study",
+      "sourcePath": "lib/october-13-research.ts",
+      "thumbnailPath": "public/october-13-2026/dispatch-priority-reviewer-agreement-study.svg",
+      "publicationDate": "2026-10-13",
+      "wordCount": 3662,
+      "sha256": "11ecf1a85ce9c2fe04190dfe6f9e0f423083803810892813be45c02a6126c9ef"
+    },
+    {
+      "kind": "research",
+      "slug": "preventive-maintenance-completion-denominator-study",
+      "title": "Preventive Maintenance Completion Denominator Study",
+      "sourcePath": "lib/october-13-research.ts",
+      "thumbnailPath": "public/october-13-2026/preventive-maintenance-completion-denominator-study.svg",
+      "publicationDate": "2026-10-13",
+      "wordCount": 3584,
+      "sha256": "a2584cb087eb7355718488209c1a7e040b016b5484a59fb279b4c4ec24a2a323"
+    },
+    {
+      "kind": "research",
+      "slug": "callback-attribution-window-sensitivity-study",
+      "title": "Callback Attribution Window Sensitivity Study",
+      "sourcePath": "lib/october-13-research.ts",
+      "thumbnailPath": "public/october-13-2026/callback-attribution-window-sensitivity-study.svg",
+      "publicationDate": "2026-10-13",
+      "wordCount": 3688,
+      "sha256": "0373847853055d2eeb828372ec1b2103a26b85df249a11a22023cbc0eb63f238"
+    },
+    {
+      "kind": "research",
+      "slug": "parts-eta-update-reliability-study",
+      "title": "Parts ETA Update Reliability Study",
+      "sourcePath": "lib/october-13-research.ts",
+      "thumbnailPath": "public/october-13-2026/parts-eta-update-reliability-study.svg",
+      "publicationDate": "2026-10-13",
+      "wordCount": 3649,
+      "sha256": "2a06a52f7da8231c8af8fb4507ad8c5211ac20715208d799674bf7b94fd6ad90"
+    },
+    {
+      "kind": "research",
+      "slug": "technician-certification-alert-lead-time-study",
+      "title": "Technician Certification Alert Lead-Time Study",
+      "sourcePath": "lib/october-13-research.ts",
+      "thumbnailPath": "public/october-13-2026/technician-certification-alert-lead-time-study.svg",
+      "publicationDate": "2026-10-13",
+      "wordCount": 3675,
+      "sha256": "de3fd1c345a294c5a369ac340163e660fa064ad5f1e0683134608caf2a1807af"
+    }
+  ]
+}

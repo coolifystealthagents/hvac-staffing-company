@@ -1,8 +1,11 @@
 import { site } from './site';
 import type { BlogPost, ResearchPost } from './types';
 import { october12BlogPosts, october12ResearchPosts } from './october-12-content';
+import { october13BlogPosts } from './october-13-blog';
+import { october13ResearchPosts } from './october-13-research';
 
 export const blogPosts: BlogPost[] = [
+  ...october13BlogPosts,
   ...october12BlogPosts,
   {
     "slug": "hvac-office-manager-vs-hvac-va",
@@ -471,6 +474,7 @@ export const blogPosts: BlogPost[] = [
   }
 ];
 export const researchPosts: ResearchPost[] = [
+  ...october13ResearchPosts,
   ...october12ResearchPosts,
   {
     "slug": "dispatch-support-workflow-boundary-review-1",
