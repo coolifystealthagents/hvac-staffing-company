@@ -1,8 +1,21 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { blogPosts,blogBySlug } from '@/lib/content';
-import { site } from '@/lib/site';
-export function generateStaticParams(){return blogPosts.map(({slug})=>({slug}))}
-export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{const {slug}=await params;const post=blogBySlug(slug);return post?{title:post.title,description:post.description,alternates:{canonical:`/blog/${post.slug}`}}:{} }
-export default async function BlogPostPage({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const post=blogBySlug(slug);if(!post)notFound();const related=blogPosts.filter((p)=>p.slug!==post.slug).slice(0,3);const visiblePublished=new Date(post.publishedAt+"T00:00:00Z").toLocaleDateString("en-US",{month:"long",day:"numeric",year:"numeric",timeZone:"UTC"});return <main><header className="page-hero"><p className="eyebrow">Home / Blog / {post.category}</p><h1>{post.title}</h1><p>{post.description}</p><p className="meta">{site.name} Editorial Team · <time dateTime={post.publishedAt}>{visiblePublished}</time> · {post.readTime}</p>{post.thumbnail&&<img className="article-hero-thumbnail" src={post.thumbnail} alt={`Illustration for ${post.title}`}/>}</header><section className="content-wrap article-layout"><article className="prose"><nav className="toc" aria-label="On this page"><strong>On this page</strong>{post.sections.map((section)=><a key={section.heading} href={`#${section.heading.toLowerCase().replace(/[^a-z0-9]+/g,'-')}`}>{section.heading}</a>)}</nav>{post.sections.map((section,index)=><section key={section.heading} id={section.heading.toLowerCase().replace(/[^a-z0-9]+/g,'-')}><h2>{section.heading}</h2>{section.paragraphs.map((paragraph)=><p key={paragraph}>{paragraph}</p>)}{index===2&&<p>Use the <Link href={post.internalService}>specialist service role</Link> as a starting point for defining scope and evidence.</p>}{index===4&&<p><a href={post.source.url} rel="noopener noreferrer">{post.source.label}</a> provides public guidance that can help your team test the workflow assumptions.</p>}{index===6&&<p>Compare this approach with our guide to <Link href={post.internalSibling}>the next related workflow</Link>.</p>}</section>)}<h2>Common questions answered</h2>{post.faq.map((item)=><div key={item.q}><h3>{item.q}</h3><p>{item.a}</p></div>)}<h2>Ready to create a clearer support role?</h2><p>Bring the workflow that consumes the most attention. We will help you shape the role, handoff, and review points.</p><Link id="cta-blog-final-bookcall" className="button primary" href="/contact-us">Book a free consultation</Link></article><aside className="sidebar"><p className="eyebrow">A practical next step</p><h3>Turn one recurring workflow into a clear role brief.</h3><p>Start with a free working conversation.</p><Link id="cta-blog-sidebar-schedulecall" className="button" href="/contact-us">Schedule a free call</Link></aside></section><section className="section"><div className="section-heading"><p className="eyebrow">Related articles</p><h2>Keep building the system.</h2></div><div className="article-grid">{related.map((item)=><Link className="article-card" href={`/blog/${item.slug}`} key={item.slug}><h3>{item.title}</h3><p>{item.description}</p></Link>)}</div></section></main>}
+import { ArticleFrame } from '@/components/ArticleFrame';
+import { blogPosts, blogBySlug } from '@/lib/content';
+import { blogGuidanceFor } from '@/lib/editorial-guidance';
+
+export function generateStaticParams() { return blogPosts.map(({ slug }) => ({ slug })); }
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params; const post = blogBySlug(slug);
+  if (!post) return {};
+  const guidance = blogGuidanceFor(post.slug);
+  return { title: post.title, description: post.description, alternates: { canonical: `/blog/${post.slug}` }, openGraph: guidance ? { images: [{ url: guidance.artwork.src, alt: guidance.artwork.alt }] } : undefined };
+}
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params; const post = blogBySlug(slug); if (!post) notFound();
+  const guidance = blogGuidanceFor(post.slug);
+  const related = blogPosts.filter((item) => item.slug !== post.slug).slice(0, 3).map((item) => ({ href: `/blog/${item.slug}`, label: item.title }));
+  const coreSections = guidance?.sections ?? post.sections;
+  const sections = [...coreSections, { heading: 'Common questions', paragraphs: post.faq.map((item) => `${item.q} ${item.a}`) }, { heading: 'Plan the next handoff', paragraphs: ['Choose one recurring queue with a known owner. Define its inputs, completion evidence, review point, and escalation triggers before adding volume.', 'A consultation can turn that first workflow into a role brief your team can inspect and improve.'] }];
+  return <ArticleFrame kind="blog" title={post.title} summary={post.description} category={post.category} publishedAt={post.publishedAt} readTime={post.readTime} thumbnail={guidance?.artwork.src ?? post.thumbnail} thumbnailAlt={guidance?.artwork.alt} sections={sections} related={related} sources={[post.source]} />;
+}

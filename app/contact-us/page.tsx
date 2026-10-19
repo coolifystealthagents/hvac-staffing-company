@@ -1,14 +1,65 @@
-import type{Metadata}from'next';import Image from'next/image';import Link from'next/link';import{LeadForm}from'@/components/LeadForm';import{site}from'@/lib/site';import'./contact.css';
-export const metadata:Metadata={title:'Contact Us | HVAC Staffing Consultation',description:'Talk with HVAC Staffing Company about remote office support for dispatch, maintenance plans, estimates, customer care, and back office workflows.',alternates:{canonical:'/contact-us'}};
-const steps=[['Workflow discovery','Map the recurring HVAC office work, current owner, systems, handoffs, and escalation points.'],['Role design','Define a focused support role with clear inputs, outputs, access, and decision boundaries.'],['Candidate matching','Review remote professionals whose strengths fit the workflow and customer communication needs.'],['Controlled launch','Start with documented tasks, measured handoffs, and accountable oversight from your HVAC team.']];
-const faqs=[['What can remote HVAC office staff support?','Remote staff can maintain approved dispatch records, coordinate customer windows, prepare maintenance plan queues, follow up on approved estimates, and organize warranty or vendor documents.'],['Can remote staff diagnose systems or direct field technicians?','No. Diagnosis, repair decisions, refrigerant handling, safety instructions, code interpretation, technical scope, and field supervision stay with qualified and authorized HVAC professionals.'],['Can we begin with one office workflow?','Yes. A narrow first workflow makes ownership, access, quality standards, and escalation easier to test before the role expands.'],['How are urgent customer issues handled?','Your team defines the emergency and safety escalation path. Remote staff can document and route an issue, but emergency response and technical decisions remain with authorized local personnel.']];
-export default function ContactPage(){const schema={'@context':'https://schema.org','@type':'ContactPage',name:`Contact ${site.name}`,url:`https://${site.domain}/contact-us`,description:'HVAC office staffing consultation.',breadcrumb:{'@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Home',item:`https://${site.domain}`},{'@type':'ListItem',position:2,name:'Contact Us',item:`https://${site.domain}/contact-us`}]}};return <main className="contact-page">
-<section className="contact-hero"><Image src={site.heroImage} alt={site.heroAlt} fill priority sizes="100vw"/><div className="contact-hero-overlay"/><div className="contact-container contact-hero-copy"><p className="eyebrow">Contact Us</p><h1>Get In Touch</h1><p>Build dependable office support around dispatch records, maintenance plan follow up, estimates, customer communication, and back office work while qualified technicians keep technical authority.</p></div></section>
-<section className="contact-section"><div className="contact-container consultation-grid"><div className="consultation-copy"><p className="eyebrow">HVAC staffing consultation</p><h2>Turn office pressure into a clear support role.</h2><p>Bring the workflow that repeatedly pulls owners, dispatch leaders, or service managers away from customers and field operations. We will help define what can be delegated, what stays with qualified personnel, and how to launch the role with control.</p><h3>What to Expect</h3><ul><li>A practical conversation about the workflow and current owner.</li><li>Clear role boundaries, access needs, and review points.</li><li>A candidate matching path based on the actual work.</li><li>A focused next step for your service operation.</li></ul><p className="contact-note"><strong>Contact:</strong> Use the secure consultation form. A verified public site email is not currently configured.</p></div><div className="contact-form-card"><h2>Book a Free Consultation</h2><p>Tell us enough to prepare a useful staffing conversation. Do not include customer payment details, credentials, or sensitive equipment access information.</p><LeadForm source="contact-page-consultation"/></div></div></section>
-<section className="contact-section credibility"><div className="contact-container credibility-grid"><div className="credibility-image"><Image src={site.heroImage} alt="HVAC office and field service tools prepared for a staffing consultation" fill sizes="(max-width: 900px) 100vw, 45vw"/></div><div><p className="eyebrow">Powered by Stealth Agents</p><h2>HVAC expertise. Stealth Agents support.</h2><p>Stealth Agents helps businesses build remote support roles around documented workflows, selective candidate matching, and accountable handoffs. The goal is durable office capacity while technical, safety, and business authority remains clear.</p><p><strong>{site.name} is a subsidiary of Stealth Agents.</strong></p><Link className="button primary" href="#consultation-calendar">Plan your consultation</Link></div></div></section>
-<section id="consultation-calendar" className="contact-section booking"><div className="contact-container booking-copy"><p className="eyebrow">Choose a time directly</p><h2>Or Skip the Wait: Book a Call Now</h2><p>Choose a time to discuss the office workflow, its accountable owner, and the support capacity your HVAC business needs.</p><iframe className="booking-frame" title="Book an HVAC staffing consultation" src="https://go.oncehub.com/StealthAgentsTeam?brdr=1pxd8d8d8&dt=&em=1&Si=1" loading="lazy"/></div></section>
-<section className="contact-section"><div className="contact-container"><p className="eyebrow">A controlled path forward</p><h2>After you reach out</h2><div className="step-grid">{steps.map(([title,copy],index)=><article key={title} className="step-card"><span>0{index+1}</span><h3>{title}</h3><p>{copy}</p></article>)}</div></div></section>
-<section className="contact-section prep"><div className="contact-container"><p className="eyebrow">Make the conversation specific</p><h2>Prepare for a useful call</h2><div className="prep-grid"><article><h3>Recurring work</h3><p>Identify tasks that recur across dispatch, plan renewals, estimate follow up, customer care, and paperwork.</p></article><article><h3>Current ownership</h3><p>Note who completes, reviews, approves, and escalates each part of the workflow today.</p></article><article><h3>Systems and access</h3><p>List the field service platform, phone, email, vendor portals, and minimum access the role would need.</p></article><article><h3>Service standard</h3><p>Define what timely, accurate, documented completion looks like for customers, technicians, and managers.</p></article></div></div></section>
-<section className="contact-section boundaries"><div className="contact-container narrow"><p className="eyebrow">Accountability stays clear</p><h2>Responsibility and boundaries</h2><p>Remote staff can prepare records, coordinate approved schedules and notices, update authorized fields, organize documents, and flag exceptions. They do not diagnose HVAC systems, specify repairs, direct technical field work, handle refrigerants, interpret codes, make safety decisions, approve warranty coverage, authorize payments, or replace licensed and qualified personnel.</p><p>Your business retains responsibility for technical work, supervision, licensing, permits, code compliance, safety, emergency response, pricing, customer commitments, financial approval, privacy, security, and every regulated or executive decision.</p></div></section>
-<section className="contact-section"><div className="contact-container"><p className="eyebrow">Explore focused roles</p><h2>Common starting points</h2><div className="path-grid"><Link href="/services/dispatch-support"><h3>Dispatch support</h3><p>Keep job records, technician updates, and customer windows organized.</p></Link><Link href="/services/maintenance-plan-support"><h3>Maintenance plan support</h3><p>Maintain renewal, reminder, and service records.</p></Link><Link href="/services/estimate-follow-up"><h3>Estimate follow up</h3><p>Keep approved follow up visible and consistent.</p></Link><Link href="/services/customer-service"><h3>Customer service support</h3><p>Handle routine communication with clear escalation rules.</p></Link></div><Link className="text-link all-services" href="/services">View the full services collection</Link></div></section>
-<section className="contact-section faq"><div className="contact-container narrow"><p className="eyebrow">HVAC staffing questions</p><h2>Frequently asked questions</h2>{faqs.map(([q,a])=><details key={q}><summary>{q}</summary><p>{a}</p></details>)}</div></section><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema)}}/></main>}
+import type { Metadata } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
+import { LeadForm } from '@/components/LeadForm';
+import { site } from '@/lib/site';
+import provenance from '../review-provenance.json';
+import './contact.css';
+
+export const metadata: Metadata = {
+  title: 'Contact Us | HVAC Staffing Consultation',
+  description: 'Map a controlled HVAC office support role with clear inputs, outputs, review points, and decision boundaries.',
+  alternates: { canonical: '/contact-us' },
+};
+
+const faqs = [
+  ['What can remote HVAC office staff support?', 'Remote staff can maintain approved dispatch records, coordinate customer windows, prepare maintenance plan queues, follow up on approved estimates, and organize warranty or vendor documents.'],
+  ['Can remote staff diagnose systems or direct technicians?', 'No. Diagnosis, repair decisions, refrigerant handling, safety instructions, code interpretation, and field supervision stay with qualified HVAC professionals.'],
+  ['Can we begin with one workflow?', 'Yes. A narrow first workflow makes access, ownership, standards, and escalation easier to test before the role expands.'],
+];
+
+export default function ContactPage() {
+  return <div className="contact-page">
+    <section className="contact-first-fold">
+      <div className="contact-intro">
+        <p className="kicker">HVAC office staffing consultation</p>
+        <h1>Build the office system your field team can rely on.</h1>
+        <p>Bring the recurring queue that consumes owner or manager attention. We will map a focused remote role while technical, safety, and approval authority stays with your HVAC team.</p>
+        <div className="scope-labels"><span>Clear role boundaries</span><span>Business email required</span><span>No scheduler on this page</span></div>
+        <div className="reviews-heading"><strong>StealthAgents reviews</strong><span>Approved first-party client feedback</span></div>
+        <div className="review-window" aria-label="StealthAgents reviews">
+          <div className="review-rail">
+            <div className="review-sequence">
+              {provenance.records.map((review) => <article className="review-card" key={review.name} tabIndex={0}>
+                <span className="stars" aria-label="5 out of 5 stars">★★★★★</span>
+                <h2>{review.headline}</h2><p>“{review.body}”</p><footer><strong>{review.name}</strong><span>{review.detail}</span></footer>
+              </article>)}
+            </div>
+            <div className="review-sequence" aria-hidden="true">
+              {provenance.records.map((review) => <article className="review-card" key={`duplicate-${review.name}`}>
+                <span className="stars">★★★★★</span>
+                <h2>{review.headline}</h2><p>“{review.body}”</p><footer><strong>{review.name}</strong><span>{review.detail}</span></footer>
+              </article>)}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="contact-form-card" aria-labelledby="consultation-title">
+        <p className="kicker">Start with the workflow</p><h2 id="consultation-title">Request a free consultation</h2>
+        <p>Share only business contact and staffing context. Do not include credentials or customer payment details.</p>
+        <LeadForm source="contact-page-consultation" />
+      </div>
+    </section>
+
+    <section className="parent-proof">
+      <div className="team-photo"><Image src="/stealth-agents-team.webp" alt="Official StealthAgents team in Bacolod" fill sizes="(max-width: 800px) 100vw, 52vw" /></div>
+      <div className="parent-copy"><p className="kicker">Managed operating support</p><h2>Delivered with StealthAgents.</h2><p>StealthAgents supports recruiting, matching, and managed staffing operations. HVAC Staffing Company keeps the role centered on HVAC office workflows, while your business retains technical, financial, safety, and customer approval authority.</p><div className="official-plate"><Image src="/stealth-agents-logo-black.png" alt="StealthAgents" width={184} height={46} /><strong>Official team, Bacolod</strong></div></div>
+    </section>
+
+    <section className="contact-detail section"><div><p className="kicker">Prepare a useful brief</p><h2>What to bring to the conversation</h2></div><div className="technical-list"><article><h3>The recurring queue</h3><p>Name where work enters, how often it arrives, and who owns it today.</p></article><article><h3>The completion evidence</h3><p>Show the fields, notes, documents, or status needed before a reviewer can accept the work.</p></article><article><h3>The decision boundary</h3><p>Identify what follows a written rule and what must pause for an authorized owner.</p></article></div></section>
+
+    <section className="boundary-band"><h2>Remote support prepares and coordinates. Qualified people decide.</h2><p>Remote staff do not diagnose equipment, specify repairs, direct field work, handle refrigerants, interpret code, approve warranty coverage, authorize payments, or replace licensed personnel.</p></section>
+
+    <section className="section faq"><h2>Questions before you contact us</h2>{faqs.map(([question, answer]) => <details key={question}><summary>{question}</summary><p>{answer}</p></details>)}<Link className="text-link" href="/services">Review all HVAC support services</Link></section>
+  </div>;
+}

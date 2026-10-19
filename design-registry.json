@@ -1,0 +1,35 @@
+{
+  "domain": "hvacstaffingcompany.com",
+  "industry": "HVAC office staffing and operational support",
+  "audience": "HVAC owners, dispatch leaders, and service managers",
+  "designFamily": "Industrial utility workshop schematic",
+  "heroComposition": "Field-workbench photography paired with a slab-serif operating brief",
+  "typeCharacter": "Industrial slab display with readable humanist sans body",
+  "paletteFamily": "Warm workshop paper, deep mechanical ink, safety orange, and pale blueprint teal",
+  "shapeGrammar": "Squared technical plates, hard rules, workshop shadows, and near-zero radii",
+  "imageTreatment": "Authentic HVAC workbench imagery plus bespoke grid-based workflow schematics",
+  "sectionRhythm": "Dense operating manuals interrupted by full-width authority boundary bands",
+  "navigationTreatment": "Flat sticky technical rail with three exact destinations and inline parent attribution",
+  "motionSignature": "One automatic contact review rail plus state feedback, static under reduced motion",
+  "density": "High-information, field-ready, and scan-oriented",
+  "signatureElement": "HVAC workflow schematics that connect request, preparation, check, and owner review",
+  "designRead": {
+    "statement": "Reading this as: an HVAC office staffing operations system for owners and service managers, with a precise field-ready workshop character, leaning toward industrial utility and technical schematic design.",
+    "DESIGN_VARIANCE": 8,
+    "MOTION_INTENSITY": 3,
+    "VISUAL_DENSITY": 7,
+    "redesignMode": "overhaul",
+    "primaryTheme": "light",
+    "primaryAccentStrategy": "Safety orange marks conversion actions, active states, review boundaries, and workshop callouts.",
+    "shapeSystem": "Squared technical plates, hard rules, minimal radii, and offset workshop shadows.",
+    "typographyDirection": "Industrial slab display with readable humanist sans body text.",
+    "imageDirection": "Authentic HVAC and workflow imagery with bespoke schematic treatments and the official StealthAgents team photograph.",
+    "motionRationale": "Motion is limited to the required review rail and clear interface state feedback."
+  },
+  "portfolioComparison": {
+    "registryPath": "/workspace/design-registry.json",
+    "minimumDifferentAxes": 6,
+    "differentAxesVersusRecentMinimum": 7,
+    "note": "The workshop palette, slab type, HVAC workbench imagery, flat navigation rail, technical plate grammar, operating-manual rhythm, and request-to-review schematic distinguish this record from every recent registry record."
+  }
+}

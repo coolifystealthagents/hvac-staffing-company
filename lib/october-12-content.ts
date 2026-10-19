@@ -224,7 +224,7 @@ const researchSpecs: ResearchSpec[] = [
   {
     slug: 'parts-delay-customer-update-cadence-experiment', title: 'Parts-Delay Customer Update Cadence Experiment', cluster: 'Customer care',
     summary: 'A controlled communication study for update timing, channel consent, operational burden, and customer information quality.',
-    finding: 'An update cadence should be judged by verified delivery, question burden, expectation accuracy, and exceptions—not by message volume alone.',
+    finding: 'An update cadence should be judged by verified delivery, question burden, expectation accuracy, and exceptions, not by message volume alone.',
     question: 'Does a scheduled parts-delay update cadence improve information completeness and reduce unplanned status contacts relative to the current owner-directed process?',
     population: 'Include eligible delayed-part cases with customer consent, known order state, and an accountable service owner. Exclude emergencies and disputes requiring individualized legal, safety, or technical communication, documenting every exclusion.',
     design: 'Randomize eligible cases or time blocks between current practice and a preapproved cadence. Freeze templates, stop rules, channel, sender identity, owner escalation, delivery checks, and the definition of a material status change.',
