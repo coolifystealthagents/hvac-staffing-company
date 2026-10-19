@@ -14,7 +14,7 @@ type ServiceManual = {
 };
 
 type SiteWithServiceManual = Omit<SiteConfig, 'services'> & {
-  services: (SiteConfig['services'][number] & { manual: ServiceManual })[];
+  services: (SiteConfig['services'][number] & { heroImage: string; heroAlt: string; manual: ServiceManual })[];
 };
 
 export const site: SiteWithServiceManual = {
@@ -43,6 +43,8 @@ export const site: SiteWithServiceManual = {
       "slug": "dispatch-support",
       "name": "Dispatch support",
       "short": "Keep job records, technician updates, and customer windows organized.",
+      "heroImage": "/editorial/hvac-dispatch-handoff-checklist.svg",
+      "heroAlt": "HVAC dispatch handoff workflow showing a controlled request and technician update path",
       "tasks": ["Prepare dispatch records", "Update job statuses", "Coordinate approved notices", "Flag schedule conflicts"],
       "manual": {
         "roleFit": [
@@ -95,6 +97,8 @@ export const site: SiteWithServiceManual = {
       "slug": "maintenance-plan-support",
       "name": "Maintenance plan support",
       "short": "Maintain renewal, reminder, and service records for plan customers.",
+      "heroImage": "/editorial/hvac-maintenance-plan-follow-up.svg",
+      "heroAlt": "HVAC maintenance plan follow-up workflow with renewal and service record checkpoints",
       "tasks": ["Prepare renewal queues", "Send approved reminders", "Update plan records", "Escalate account exceptions"],
       "manual": {
         "roleFit": [
@@ -147,6 +151,8 @@ export const site: SiteWithServiceManual = {
       "slug": "estimate-follow-up",
       "name": "Estimate follow up",
       "short": "Keep approved estimate follow up visible and consistent.",
+      "heroImage": "/editorial/hvac-estimate-follow-up-workflow.svg",
+      "heroAlt": "HVAC estimate follow-up workflow showing proposal review and customer response routing",
       "tasks": ["Prepare follow up queues", "Record customer responses", "Route technical questions", "Maintain next actions"],
       "manual": {
         "roleFit": [
@@ -199,6 +205,8 @@ export const site: SiteWithServiceManual = {
       "slug": "customer-service",
       "name": "Customer service support",
       "short": "Handle routine customer communication with clear escalation rules.",
+      "heroImage": "/editorial/hvac-customer-escalation-path.svg",
+      "heroAlt": "HVAC customer service escalation path separating routine cases from urgent review",
       "tasks": ["Answer approved questions", "Document service requests", "Route urgent issues", "Prepare resolution summaries"],
       "manual": {
         "roleFit": [
@@ -251,6 +259,8 @@ export const site: SiteWithServiceManual = {
       "slug": "parts-warranty-admin",
       "name": "Parts and warranty administration",
       "short": "Organize records that support parts, warranty, and vendor workflows.",
+      "heroImage": "/editorial/parts-warranty-admin-source-quality-audit-17.svg",
+      "heroAlt": "HVAC parts and warranty source quality workflow for claim evidence and vendor review",
       "tasks": ["Maintain claim records", "Prepare document packets", "Track request status", "Flag missing information"],
       "manual": {
         "roleFit": [
@@ -303,6 +313,8 @@ export const site: SiteWithServiceManual = {
       "slug": "hvac-bookkeeping-support",
       "name": "HVAC bookkeeping support",
       "short": "Prepare operational records for review by your financial team.",
+      "heroImage": "/editorial/hvac-bookkeeping-support-workflow-boundary-review-6.svg",
+      "heroAlt": "HVAC bookkeeping support workflow showing transaction preparation and financial review boundaries",
       "tasks": ["Organize receipts", "Prepare invoice records", "Maintain vendor files", "Flag reconciliation questions"],
       "manual": {
         "roleFit": [
@@ -353,6 +365,6 @@ export const site: SiteWithServiceManual = {
     }
   ],
   "categories": ["Dispatch systems", "Customer care", "Maintenance plans", "Role design"],
-  "principles": ["Top 1 percent selectivity", "Clear role boundaries", "Reviewable workflows"],
+  "principles": ["Role-matched selection", "Clear role boundaries", "Reviewable workflows"],
   "sources": [{ "label": "United States Environmental Protection Agency", "url": "https://www.epa.gov/section608" }]
 };

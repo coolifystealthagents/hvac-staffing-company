@@ -82,9 +82,16 @@ export function blogGuidanceFor(slug: string): { artwork: Artwork; sections: Sec
   if (!topic) return undefined;
   const service = serviceFor(topic.serviceSlug);
   const manual = service.manual;
+  const comparisonSections: Section[] = slug === 'hvac-office-manager-vs-hvac-va' ? [
+    { heading: 'Compare decision ownership', paragraphs: ['An HVAC office manager remains the decision owner for queue priorities, customer exceptions, staffing tradeoffs, and final operating review. A virtual assistant works inside the documented lane and returns decisions that fall outside it.', 'The comparison is not a replacement test. It identifies which preparation can move while management accountability remains visible.'] },
+    { heading: 'Compare daily queue ownership', paragraphs: ['The office manager decides which queue takes precedence when dispatch, maintenance plans, estimates, customer issues, and administrative deadlines compete. A virtual assistant can maintain an assigned queue, prepare its records, and surface blocked items using the agreed status rules.', 'Daily ownership needs a named handoff time, current source record, next action, and exception owner.'] },
+    { heading: 'Keep hiring and coaching with management', paragraphs: ['Hiring and coaching belong to the employer and its authorized managers. They define performance expectations, assess conduct, approve access, and decide when the role or workload changes.', 'A managed staffing partner can support recruiting and matching, while the HVAC company retains workplace policy and operating decisions.'] },
+    { heading: 'Define escalation authority', paragraphs: ['Escalation authority should state who receives safety concerns, technical questions, customer commitments, pricing exceptions, schedule conflicts, and sensitive workforce matters.', 'The virtual assistant records and routes the exception. The office manager or other qualified owner decides the response and authorizes closure.'] },
+  ] : [];
   return {
     artwork: legacyArtwork[slug as (typeof legacyBlogSlugs)[number]],
     sections: [
+      ...comparisonSections,
       { heading: 'Define the operating boundary', paragraphs: [topic.opening, ...manual.roleFit] },
       { heading: 'Use the real source records', paragraphs: manual.inputsAccess },
       { heading: 'Run the workflow in order', paragraphs: manual.workflowSteps },

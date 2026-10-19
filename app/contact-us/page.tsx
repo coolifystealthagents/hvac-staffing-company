@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { LeadForm } from '@/components/LeadForm';
 import { site } from '@/lib/site';
 import provenance from '../review-provenance.json';
-import './contact.css';
 
 export const metadata: Metadata = {
   title: 'Contact Us | HVAC Staffing Consultation',
@@ -26,18 +25,16 @@ export default function ContactPage() {
         <h1>Build the office system your field team can rely on.</h1>
         <p>Bring the recurring queue that consumes owner or manager attention. We will map a focused remote role while technical, safety, and approval authority stays with your HVAC team.</p>
         <div className="scope-labels"><span>Clear role boundaries</span><span>Business email required</span><span>No scheduler on this page</span></div>
-        <div className="reviews-heading"><strong>StealthAgents reviews</strong><span>Approved first-party client feedback</span></div>
+        <div className="reviews-heading"><strong>StealthAgents reviews</strong><span>Approved first-party client feedback · Source-displayed rating: 5 out of 5</span></div>
         <div className="review-window" aria-label="StealthAgents reviews">
           <div className="review-rail">
             <div className="review-sequence">
               {provenance.records.map((review) => <article className="review-card" key={review.name} tabIndex={0}>
-                <span className="stars" aria-label="5 out of 5 stars">★★★★★</span>
                 <h2>{review.headline}</h2><p>“{review.body}”</p><footer><strong>{review.name}</strong><span>{review.detail}</span></footer>
               </article>)}
             </div>
             <div className="review-sequence" aria-hidden="true">
               {provenance.records.map((review) => <article className="review-card" key={`duplicate-${review.name}`}>
-                <span className="stars">★★★★★</span>
                 <h2>{review.headline}</h2><p>“{review.body}”</p><footer><strong>{review.name}</strong><span>{review.detail}</span></footer>
               </article>)}
             </div>

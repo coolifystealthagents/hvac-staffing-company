@@ -45,20 +45,24 @@ export function LeadForm({ source = 'contact-page' }: { source?: string }) {
 
     try {
       const response = await fetch('/api/submit-lead', { method: 'POST', body: data });
-      const result = await response.json();
+      const result = await response.json().catch(() => ({})) as { ok?: boolean; ignored?: boolean; message?: string };
+      if (result.ignored) {
+        setBusy(false);
+        return;
+      }
       if (!response.ok || !result.ok) {
         const message = result.message || 'Please check your details and try again.';
         showError(message, /business email/i.test(message) ? 'email' : 'form');
         return;
       }
-      if (result.ignored) {
-        setBusy(false);
-        return;
-      }
 
       const payload = Object.fromEntries(data.entries());
       delete payload.website_url;
-      window.acrTracker?.trackLead({ ...payload, source });
+      try {
+        window.acrTracker?.trackLead({ ...payload, source });
+      } catch (trackingError) {
+        console.warn('[lead-form] optional analytics failed', trackingError);
+      }
       router.push('/thank-you');
     } catch {
       showError('We could not send your request. Please try again.');

@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { sendLeadFallbackToMattermost } from '../../../lib/lead-fallback-mattermost';
+import { clientAddress, consumeRequest, isAllowedOrigin } from '../../../lib/request-guards';
 
 const MAX_BODY_BYTES = 65_536;
 const FORWARD_TIMEOUT_MS = 5_000;
@@ -114,6 +115,10 @@ async function forwardToAcr(endpoint: string, payload: Record<string, string>): 
 }
 
 export async function POST(request: Request) {
+  if (!isAllowedOrigin(request)) return jsonError('Origin not allowed.', 403);
+  const rateKey = `lead:${clientAddress(request)}`;
+  if (!consumeRequest(rateKey, 8, 10 * 60_000)) return jsonError('Too many requests. Please try again later.', 429);
+
   const contentLength = request.headers.get('content-length');
   if (contentLength && (!/^\d+$/.test(contentLength) || Number(contentLength) > MAX_BODY_BYTES)) {
     return jsonError('Request is too large.', 413);
@@ -137,7 +142,7 @@ export async function POST(request: Request) {
   if (!validated.fields) return badRequest(validated.error || 'Invalid form submission.');
   const fields = validated.fields;
 
-  if (fields.website_url) return NextResponse.json({ ok: true, ignored: true });
+  if (fields.website_url) return NextResponse.json({ ok: false, ignored: true });
 
   const source = (fields.source || '').trim();
   if (!allowedSources.has(source)) return badRequest('Invalid form source.');
@@ -171,7 +176,10 @@ export async function POST(request: Request) {
     name: [firstName, lastName].filter(Boolean).join(' ') || legacyName,
     email,
     phone: fields.phone || '',
+    phoneCountry: fields.phone_country || '',
     business: company,
+    companyWebsite: fields.company_website || '',
+    source,
     message: fields.message || '',
     companySize,
     positions,

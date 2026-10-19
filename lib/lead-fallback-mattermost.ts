@@ -7,7 +7,10 @@ export interface FallbackLeadPayload {
   name: string;
   email: string;
   phone: string;
+  phoneCountry?: string;
   business?: string;
+  companyWebsite?: string;
+  source?: string;
   message?: string;
   companySize?: string;
   positions?: string;
@@ -34,8 +37,11 @@ export async function sendLeadFallbackToMattermost(lead: FallbackLeadPayload): P
     `| Site | ${escapeMd(SITE_ID)} |`,
     `| Name | ${escapeMd(lead.name) || '_(empty)_'} |`,
     `| Email | ${escapeMd(lead.email) || '_(empty)_'} |`,
+    `| Phone country | ${escapeMd(lead.phoneCountry) || '-'} |`,
     `| Phone | ${escapeMd(lead.phone) || '_(empty)_'} |`,
     `| Business | ${escapeMd(lead.business) || '-'} |`,
+    `| Company website | ${escapeMd(lead.companyWebsite) || '-'} |`,
+    `| Source | ${escapeMd(lead.source) || '-'} |`,
     `| Company size | ${escapeMd(lead.companySize) || '-'} |`,
     `| Positions | ${escapeMd(lead.positions) || '-'} |`,
     `| Referral | ${escapeMd(lead.referral) || '-'} |`,
@@ -68,7 +74,7 @@ export async function sendLeadFallbackToMattermost(lead: FallbackLeadPayload): P
 
 function escapeMd(value: string | undefined): string {
   if (!value) return '';
-  return String(value).replace(/[|`*_\\]/g, (character) => `\\${character}`).slice(0, 1_000);
+  return String(value).replace(/@/g, '@\u200b').replace(/[|`*_\\]/g, (character) => `\\${character}`).slice(0, 1_000);
 }
 
 function looksRandomAlphanumeric(value: string): boolean {

@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { ArticleFrame } from '@/components/ArticleFrame';
 import { researchPosts, researchBySlug } from '@/lib/content';
 import { researchGuidanceFor } from '@/lib/editorial-guidance';
+import { readerSectionsForResearch } from '@/lib/reader-sections';
 
 export function generateStaticParams() { return researchPosts.map(({ slug }) => ({ slug })); }
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -20,7 +21,7 @@ export default async function ResearchPostPage({ params }: { params: Promise<{ s
     { heading: 'Operational interpretation', paragraphs: ['A support role is defined by the boundary between repeatable preparation and accountable judgment. Checklists, source records, status conventions, and named reviewers make that boundary visible.', 'The control should help a reviewer understand what was checked, what is incomplete, and who owns the next action.'] },
     { heading: 'Apply the finding', paragraphs: ['Begin with a sample of real records. Compare the proposed checklist with actual exceptions, update the instructions, and expand only when the review evidence is consistent.', 'Keep diagnosis, safety, technical direction, financial approval, and policy decisions with qualified owners.'] },
   ];
-  const sections = guidance?.sections ?? (post.sections?.length ? [{ heading: 'Key finding', paragraphs: [post.finding] }, ...post.sections] : fallback);
+  const sections = guidance?.sections ?? readerSectionsForResearch(post) ?? (post.sections?.length ? [{ heading: 'Key finding', paragraphs: [post.finding] }, ...post.sections] : fallback);
   const related = researchPosts.filter((item) => item.slug !== post.slug).slice(0, 3).map((item) => ({ href: `/research/${item.slug}`, label: item.title }));
   return <ArticleFrame kind="research" title={post.title} summary={post.summary} category={`Research: ${post.cluster}`} publishedAt={post.publishedAt} thumbnail={guidance?.artwork.src ?? post.thumbnail} thumbnailAlt={guidance?.artwork.alt} sections={sections} related={related} sources={post.sources} />;
 }

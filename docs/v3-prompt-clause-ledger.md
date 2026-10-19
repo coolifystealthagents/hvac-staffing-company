@@ -15,16 +15,20 @@ DESIGN_VARIANCE 8. MOTION_INTENSITY 3. VISUAL_DENSITY 7. Redesign mode: overhaul
 | Header and footer parent attribution | Visible `Powered by StealthAgents` in both global landmarks | Source contract |
 | Uniform subsidiary logo | `/logo.svg` in metadata, header, and footer | Source contract |
 | No promotional modal | Timed modal removed from chrome and layout | Source contract |
-| Ten approved unique reviews | Copied provenance from approved repository and rendered once per record | Provenance uniqueness test |
+| Ten approved unique reviews | Approved provenance renders one accessible instance per record plus one `aria-hidden` visual loop sequence; the source-level displayed rating is not assigned to individual testimonials | Provenance uniqueness and trust-copy tests |
 | Contact conversion composition | Reviews and title left, complete owned form right | Source and render contract |
 | No contact scheduler | Scheduler only remains on `/thank-you` | Source contract |
 | Official parent proof | Approved team photograph, official logo, explanation, exact plate text | Asset and source contract |
 | Six long-form service pages | Shared operating-manual template includes audience, problem, scope, inputs, workflow, deliverables, controls, boundaries, scenarios, FAQs, related services, CTA | Service contract |
 | Complete editorial framing | Shared heading-derived TOC, active IntersectionObserver state, sticky populated desktop sidebar, mobile disclosure | Article contract |
 | Canonicals and noindex | Dynamic article and service canonicals; confirmation routes noindex | Route contract |
-| Security and redirects | CSP and security headers; Cloudflare visitor scheme aware apex HTTPS proxy | Security contract |
+| Security and redirects | CSP and security headers; Cloudflare visitor scheme aware apex HTTPS proxy; canonical-origin public POST guards; bounded Cloudflare-client throttling; site-bound tracking batches | Security and final-review remediation contracts |
 | Punctuation and decorative labels | Decorative zero-padded labels removed; rendered dash audit retained | Contract plus build audit |
 | Design diversity | Repo-local registry records at least seven differing recent axes | Registry review |
+
+## Independent-review successor corrections
+
+The successor removes the unsupported selection-rate claim and individual testimonial star attribution, adds complete and mention-neutralized fallback delivery, isolates optional tracker failures from accepted-lead navigation, constrains both public POST routes, suppresses unrelated generic citations on legacy guidance, expands the office-manager comparison, adds route-specific service art, deepens the About explanation, and replaces repetitive October 13 reader-facing bodies with concise topic-specific operating sections.
 
 ## Preserved contracts
 

@@ -90,7 +90,7 @@ test('blog guidance uses the matching service manual and replaces legacy repeate
   }
   const page = read('app/blog/[slug]/page.tsx');
   assert.match(page, /blogGuidanceFor\(post\.slug\)/);
-  assert.match(page, /guidance\?\.sections \?\? post\.sections/);
+  assert.match(page, /guidance\?\.sections \?\? readerSectionsForBlog\(post\) \?\? post\.sections/);
 });
 
 test('research guidance is service specific, method specific, and explicitly bounded', () => {

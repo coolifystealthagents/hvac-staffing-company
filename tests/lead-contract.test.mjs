@@ -40,11 +40,13 @@ test('accepted API response means ACR HTTP success or awaited successful fallbac
   assert.match(directFallback, /AbortController/);
 });
 
-test('honeypot success is identified as ignored and cannot produce client analytics or navigation', () => {
+test('honeypot response is ignored without claiming delivery or producing client analytics and navigation', () => {
   const api = route();
   const client = form();
-  assert.match(api, /ok:\s*true,\s*ignored:\s*true/);
+  assert.match(api, /ok:\s*false,\s*ignored:\s*true/);
+  assert.doesNotMatch(api, /ok:\s*true,\s*ignored:\s*true/);
   assert.match(client, /result\.ignored/);
+  assert.ok(client.indexOf('result.ignored') < client.indexOf('!response.ok'));
   assert.ok(client.indexOf('result.ignored') < client.indexOf('trackLead'));
   assert.ok(client.indexOf('result.ignored') < client.indexOf("router.push('/thank-you')"));
 });

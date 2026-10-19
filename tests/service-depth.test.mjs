@@ -49,6 +49,8 @@ test('site defines exactly six complete service operating records', () => {
   assert.deepEqual(services.map(({ slug }) => slug), expectedSlugs);
 
   for (const service of services) {
+    assert.match(service.heroImage, /^\/editorial\/.+\.svg$/, `${service.slug} has route-specific workflow hero art`);
+    assert.ok(service.heroAlt.length >= 30, `${service.slug} has descriptive hero alt text`);
     assert.ok(service.manual, `${service.slug} has a manual`);
     assert.ok(service.manual.roleFit.length >= 2, `${service.slug} has specific role fit`);
     assert.ok(service.manual.problem.length >= 2, `${service.slug} has a specific problem statement`);
@@ -64,6 +66,7 @@ test('site defines exactly six complete service operating records', () => {
       assert.match(`${faq.q} ${faq.a}`, specificity[service.slug], `${service.slug} FAQ is service-specific`);
     }
   }
+  assert.equal(new Set(services.map(({ heroImage }) => heroImage)).size, 6, 'service hero artwork must be unique');
 });
 
 test('every operating section is meaningfully unique across services', () => {
@@ -83,7 +86,17 @@ test('service page renders structured guidance while preserving route contracts'
   for (const field of [...sections, 'roleFit', 'problem', 'faqs']) assert.match(page, new RegExp(`manual\\.${field}`));
   for (const heading of ['Who this role is for', 'The problem it addresses', 'Scope of work', 'Inputs and access', 'Workflow and deliverables', 'Quality controls', 'Decision boundaries', 'Common starting scenarios', 'Frequently asked questions', 'Related services', 'Start with a controlled handoff']) assert.match(page, new RegExp(heading));
   assert.match(page, /canonical: `\/services\/\$\{service\.slug\}`/);
-  assert.match(page, /src="\/hero\.png"/);
+  assert.match(page, /src=\{service\.heroImage\}/);
+  assert.match(page, /alt=\{service\.heroAlt\}/);
+  assert.doesNotMatch(page, /src="\/hero\.png"/);
   assert.match(page, /cta-services-\$\{service\.slug\}-bookcall/);
   assert.match(page, /cta-services-\$\{service\.slug\}-consultation/);
+});
+
+test('about page substantially explains the operating model and accountability boundaries', () => {
+  const about = read('app/about/page.tsx');
+  for (const heading of ['How the operating model works', 'What belongs in the role brief', 'How accountability stays visible', 'Where the role stops', 'Built with StealthAgents']) {
+    assert.match(about, new RegExp(heading));
+  }
+  assert.ok((about.match(/<p>/g) || []).length >= 10, 'about page has substantial explanatory copy');
 });

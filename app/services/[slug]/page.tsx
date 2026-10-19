@@ -15,9 +15,9 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
   const { slug } = await params; const service = serviceBySlug(slug); if (!service) notFound();
   const related = site.services.filter((item) => item.slug !== service.slug).slice(0, 3);
   return <div>
-    <header className="service-detail-hero"><div><p className="kicker">HVAC office support lane</p><h1>{service.name}</h1><p>{service.short} Build the lane around approved source material, visible completion evidence, and a named reviewer.</p><Link id={`cta-services-${service.slug}-bookcall`} className="button primary" href="/contact-us">Discuss this role</Link></div><div className="service-schematic" role="img" aria-label={`${service.name} workflow from intake to owner review`}><span>REQUEST</span><i /><span>PREPARE</span><i /><span>CHECK</span><i /><span>OWNER REVIEW</span><strong>{service.name}</strong></div></header>
+    <header className="service-detail-hero"><div><p className="kicker">HVAC office support lane</p><h1>{service.name}</h1><p>{service.short} Build the lane around approved source material, visible completion evidence, and a named reviewer.</p><Link id={`cta-services-${service.slug}-bookcall`} className="button primary" href="/contact-us">Discuss this role</Link></div><Image className="service-hero-art" src={service.heroImage} alt={service.heroAlt} width={760} height={480} priority /></header>
     <div className="service-manual">
-      <aside><Image src="/hero.png" alt="HVAC workshop tools and planning materials" width={520} height={420} /><strong>Operating principle</strong><p>Preparation can be delegated. Accountable judgment cannot.</p></aside>
+      <aside><strong>Operating principle</strong><p>Preparation can be delegated. Accountable judgment cannot.</p><p>Every completed item should retain its source, current status, next action, and accountable reviewer.</p></aside>
       <article className="prose">
         <section><h2>Who this role is for</h2>{service.manual.roleFit.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</section>
         <section><h2>The problem it addresses</h2>{service.manual.problem.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</section>
