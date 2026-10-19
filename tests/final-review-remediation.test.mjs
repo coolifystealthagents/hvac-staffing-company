@@ -57,8 +57,12 @@ test('trust copy is provenance accurate and contains no unsupported selection-ra
 test('legacy guidance is comparison-specific and suppresses unrelated generic sources', () => {
   const guidance = read('lib/editorial-guidance.ts');
   for (const term of ['Decision owner', 'Daily queue ownership', 'Hiring and coaching', 'Escalation authority']) assert.match(guidance, new RegExp(term, 'i'));
-  const page = read('app/blog/[slug]/page.tsx');
-  assert.match(page, /sources=\{guidance \? \[\] : \[post\.source\]\}/);
+  const blogPage = read('app/blog/[slug]/page.tsx');
+  const researchPage = read('app/research/[slug]/page.tsx');
+  assert.match(blogPage, /const readerSections = readerSectionsForBlog\(post\)/);
+  assert.match(blogPage, /sources=\{guidance \|\| readerSections \? \[\] : \[post\.source\]\}/);
+  assert.match(researchPage, /const readerSections = readerSectionsForResearch\(post\)/);
+  assert.match(researchPage, /sources=\{guidance \|\| readerSections \? \[\] : post\.sources\}/);
 });
 
 test('October 13 routes render concise stage-specific sections rather than repeated checkpoint prose', () => {
