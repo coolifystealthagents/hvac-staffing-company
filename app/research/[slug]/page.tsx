@@ -4,6 +4,7 @@ import { ArticleFrame } from '@/components/ArticleFrame';
 import { researchPosts, researchBySlug } from '@/lib/content';
 import { researchGuidanceFor } from '@/lib/editorial-guidance';
 import { readerSectionsForResearch } from '@/lib/reader-sections';
+import TocSync from '@/components/TocSync';
 
 export function generateStaticParams() { return researchPosts.map(({ slug }) => ({ slug })); }
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {

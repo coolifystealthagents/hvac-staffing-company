@@ -4,6 +4,7 @@ import { ArticleFrame } from '@/components/ArticleFrame';
 import { blogPosts, blogBySlug } from '@/lib/content';
 import { blogGuidanceFor } from '@/lib/editorial-guidance';
 import { readerSectionsForBlog } from '@/lib/reader-sections';
+import TocSync from '@/components/TocSync';
 
 export function generateStaticParams() { return blogPosts.map(({ slug }) => ({ slug })); }
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {

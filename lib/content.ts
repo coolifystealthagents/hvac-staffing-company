@@ -3,8 +3,10 @@ import type { BlogPost, ResearchPost } from './types';
 import { october12BlogPosts, october12ResearchPosts } from './october-12-content';
 import { october13BlogPosts } from './october-13-blog';
 import { october13ResearchPosts } from './october-13-research';
+import { october22BlogBatch, october22ResearchBatch } from './october22Batch';
 
 export const blogPosts: BlogPost[] = [
+  ...october22BlogBatch,
   ...october13BlogPosts,
   ...october12BlogPosts,
   {
@@ -474,6 +476,7 @@ export const blogPosts: BlogPost[] = [
   }
 ];
 export const researchPosts: ResearchPost[] = [
+  ...october22ResearchBatch,
   ...october13ResearchPosts,
   ...october12ResearchPosts,
   {

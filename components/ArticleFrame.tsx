@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import TocSync from './TocSync';
 import { useEffect, useMemo, useState } from 'react';
 
 type Section = { heading: string; paragraphs: string[] };
@@ -39,8 +40,9 @@ export function ArticleFrame({ title, summary, category, kind, publishedAt, read
   const toc = <nav className="article-toc" aria-label="Table of contents"><strong>Table of contents</strong>{items.map((item) => <a key={item.id} href={`#${item.id}`} aria-current={active === item.id ? 'location' : undefined}>{item.heading}</a>)}</nav>;
 
   return <div className="article-page">
+    <TocSync />
     <header className="article-opening">
-      <div><p className="kicker">{category}</p><h1>{title}</h1><p className="article-dek">{summary}</p><div className="article-meta"><span>HVAC Staffing Company Editorial Team</span><time dateTime={publishedAt}>{formatted}</time>{readTime && <span>{readTime}</span>}</div></div>
+      <div><p className="kicker">{category}</p><h1>{title}</h1><p className="article-dek">{summary}</p><div className="article-meta"><span>HVAC Staffing Company Editorial Team</span><span>Published <time dateTime={publishedAt}>{formatted}</time></span>{readTime && <span>{readTime}</span>}</div></div>
       {thumbnail ? <img className="article-hero-image" src={thumbnail} alt={thumbnailAlt ?? `Topic illustration for ${title}`} /> : <div className="topic-hero" role="img" aria-label={`Technical workflow illustration for ${title}`}><span>INPUT</span><i /><span>REVIEW</span><i /><span>HANDOFF</span><strong>{title}</strong></div>}
     </header>
     <details className="article-mobile-toc"><summary>Table of contents</summary>{toc}</details>
