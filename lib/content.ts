@@ -10,7 +10,7 @@ import { october25BlogBatch } from './october25Blog';
 import { october25ResearchBatch } from './october25Research';
 
 export const blogPosts: BlogPost[] = [
-  ...october25BlogBatch, ...october26BlogBatch, ...october22BlogBatch,
+  ...october26BlogBatch, ...october25BlogBatch, ...october22BlogBatch,
   ...october13BlogPosts,
   ...october12BlogPosts,
   {
@@ -480,7 +480,7 @@ export const blogPosts: BlogPost[] = [
   }
 ];
 export const researchPosts: ResearchPost[] = [
-  ...october25ResearchBatch, ...october26ResearchBatch, ...october22ResearchBatch,
+  ...october26ResearchBatch, ...october25ResearchBatch, ...october22ResearchBatch,
   ...october13ResearchPosts,
   ...october12ResearchPosts,
   {
