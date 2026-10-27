@@ -13,7 +13,7 @@ export const october27ResearchBatch: readonly ResearchPost[] = [
       {
         "heading": "Research question and scope",
         "paragraphs": [
-          "Do two reviewers put the same item in the same priority band using the written scoring rule? The scope is the operational record for HVAC dispatch, scheduling, and customer support, not the legal, financial, or clinical conclusion that may follow.",
+          " The hvacstaffingcompany review should show the source, owner, next action, and exception reason for this do reviewers agree on work priority in hvac dispatch, scheduling, and customer support? workflow before the item moves.",
           "For HVAC dispatch, scheduling, and customer support: The study is deliberately narrow. It reports what the record can show in a defined population and window. It does not claim an industry rate or a causal staffing effect."
         ]
       },
@@ -491,7 +491,7 @@ export const october27ResearchBatch: readonly ResearchPost[] = [
       {
         "heading": "Research question and scope",
         "paragraphs": [
-          "How much delay comes from an upstream input, an internal owner, or a rework loop? The scope is the operational record for HVAC dispatch, scheduling, and customer support, not the legal, financial, or clinical conclusion that may follow.",
+          " The hvacstaffingcompany review should show the source, owner, next action, and exception reason for this where do dependencies add delay in hvac dispatch, scheduling, and customer support? workflow before the item moves.",
           "For HVAC dispatch, scheduling, and customer support: The study is deliberately narrow. It reports what the record can show in a defined population and window. It does not claim an industry rate or a causal staffing effect."
         ]
       },
