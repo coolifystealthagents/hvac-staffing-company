@@ -5,12 +5,14 @@ import { october13BlogPosts } from './october-13-blog';
 import { october13ResearchPosts } from './october-13-research';
 import { october22BlogBatch, october22ResearchBatch } from './october22Batch';
 import { october26BlogBatch } from './october26Blog';
+import { october27BlogBatch } from './october27Blog';
 import { october26ResearchBatch } from './october26Research';
+import { october27ResearchBatch } from './october27Research';
 import { october25BlogBatch } from './october25Blog';
 import { october25ResearchBatch } from './october25Research';
 
 export const blogPosts: BlogPost[] = [
-  ...october26BlogBatch, ...october25BlogBatch, ...october22BlogBatch,
+  ...october27BlogBatch, ...october26BlogBatch, ...october25BlogBatch, ...october22BlogBatch,
   ...october13BlogPosts,
   ...october12BlogPosts,
   {
@@ -480,7 +482,7 @@ export const blogPosts: BlogPost[] = [
   }
 ];
 export const researchPosts: ResearchPost[] = [
-  ...october26ResearchBatch, ...october25ResearchBatch, ...october22ResearchBatch,
+  ...october27ResearchBatch, ...october26ResearchBatch, ...october25ResearchBatch, ...october22ResearchBatch,
   ...october13ResearchPosts,
   ...october12ResearchPosts,
   {
