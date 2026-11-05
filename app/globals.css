@@ -12,3 +12,10 @@
 
 @media(max-width:900px){.global-header-cta{font-size:.72rem;padding:.55rem .7rem}.page-hero-with-image{grid-template-columns:1fr}.page-hero-image{height:min(60vw,480px)}}
 @media(max-width:420px){.site-header{padding:0 .75rem;gap:.5rem;min-width:0}.site-header .brand{min-width:0;margin-right:auto}.site-header .brand span{display:none}.site-header .brand img{width:38px;height:38px}.site-header .powered{max-width:80px;padding-left:.4rem;font-size:.45rem;letter-spacing:.02em}.global-header-cta{padding:.45rem .5rem;font-size:.62rem;line-height:1.15;text-align:center;max-width:76px}.menu-toggle{flex:none}.page-hero-image{height:280px}}
+
+/* Current-batch reading and listing refinements */
+.article-sidebar .article-toc a{font-size:.9rem;line-height:1.45}
+.article-card h2{font-size:1.5rem;line-height:1.22;letter-spacing:0;margin:.6rem 0 .5rem}
+.article-card img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.content-card h2{font-size:1.5rem;line-height:1.22;letter-spacing:0;margin:.6rem 0 .5rem}
+.content-card img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
