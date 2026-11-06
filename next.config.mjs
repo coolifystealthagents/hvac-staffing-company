@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
 const csp = [
   "default-src 'self'",
-  " https://databull.stealthagents.us 'self' 'unsafe-inline' https://acrtracking.stealthagents.us https://*.oncehub.com",
+  "script-src https://databull.stealthagents.us 'self' 'unsafe-inline' https://acrtracking.stealthagents.us https://*.oncehub.com",
   "style-src 'self' 'unsafe-inline' https://*.oncehub.com",
   "img-src 'self' data: blob: https:",
   "font-src 'self' data:",
-  " https://databull.stealthagents.us 'self' https://acrtracking.stealthagents.us https://*.stealthagents.us https://*.oncehub.com",
+  "connect-src https://databull.stealthagents.us 'self' https://acrtracking.stealthagents.us https://*.stealthagents.us https://*.oncehub.com",
   "frame-src https://go.oncehub.com https://*.oncehub.com",
   "object-src 'none'",
   "base-uri 'self'",
