@@ -6,10 +6,12 @@ import { november05BlogPosts } from './november05-blog';
 import { november05ResearchPosts } from './november05-research';
 import { november03BlogPosts } from './november03-blog';
 import { november04BlogPosts } from './november04-blog';
+import { november07BlogPosts } from './november07-blog';
 import { november02BlogPosts } from './november02-blog';
 import { november01BlogPosts } from './november01-blog';
 import { november03ResearchPosts } from './november03-research';
 import { november04ResearchPosts } from './november04-research';
+import { november07ResearchPosts } from './november07-research';
 import { november02ResearchPosts } from './november02-research';
 import { november01ResearchPosts } from './november01-research';
 import { october12BlogPosts, october12ResearchPosts } from './october-12-content';
@@ -30,6 +32,7 @@ export const blogPosts: BlogPost[] = [
   ...november05BlogPosts,
   ...november03BlogPosts,
   ...november04BlogPosts,
+  ...november07BlogPosts,
   ...november02BlogPosts,
   ...november01BlogPosts,
   ...october28BlogBatch, ...october27BlogBatch, ...october26BlogBatch, ...october25BlogBatch, ...october22BlogBatch,
@@ -506,6 +509,7 @@ export const researchPosts: ResearchPost[] = [
   ...november05ResearchPosts,
   ...november03ResearchPosts,
   ...november04ResearchPosts,
+  ...november07ResearchPosts,
   ...november02ResearchPosts,
   ...november01ResearchPosts,
   ...october28ResearchBatch, ...october27ResearchBatch, ...october26ResearchBatch, ...october25ResearchBatch, ...october22ResearchBatch,
