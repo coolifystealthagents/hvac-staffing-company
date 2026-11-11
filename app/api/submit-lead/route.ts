@@ -1,5 +1,4 @@
 import { NextResponse } from 'next/server';
-import { sendLeadFallbackToMattermost } from '../../../lib/lead-fallback-mattermost';
 import { clientAddress, consumeRequest, isAllowedOrigin } from '../../../lib/request-guards';
 
 const MAX_BODY_BYTES = 65_536;
@@ -168,26 +167,10 @@ export async function POST(request: Request) {
   delete payload.website_url;
 
   const endpoint = process.env.ACR_LEAD_ENDPOINT;
-  if (endpoint && await forwardToAcr(endpoint, payload)) {
+  // Without a server destination, the installed ACR SDK owns lead delivery.
+  // A disabled site-direct fallback must not turn a valid submission into an error.
+  if (!endpoint || await forwardToAcr(endpoint, payload)) {
     return NextResponse.json({ ok: true });
   }
-
-  const fallbackAccepted = await sendLeadFallbackToMattermost({
-    name: [firstName, lastName].filter(Boolean).join(' ') || legacyName,
-    email,
-    phone: fields.phone || '',
-    phoneCountry: fields.phone_country || '',
-    business: company,
-    companyWebsite: fields.company_website || '',
-    source,
-    message: fields.message || '',
-    companySize,
-    positions,
-    referral,
-    pageUrl: request.headers.get('referer') || '',
-    userAgent: request.headers.get('user-agent') || '',
-  });
-  if (fallbackAccepted) return NextResponse.json({ ok: true, fallback: true });
-
   return jsonError('We could not send your request.', 502);
 }
