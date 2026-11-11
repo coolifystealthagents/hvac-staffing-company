@@ -59,7 +59,7 @@ export function LeadForm({ source = 'contact-page' }: { source?: string }) {
       const payload = Object.fromEntries(data.entries());
       delete payload.website_url;
       try {
-        window.acrTracker?.trackLead({ ...payload, source });
+        /* ACR captures the native submit event once. */
       } catch (trackingError) {
         console.warn('[lead-form] optional analytics failed', trackingError);
       }
