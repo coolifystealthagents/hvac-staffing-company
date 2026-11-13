@@ -27,17 +27,16 @@ test('lead API validates actual body bytes, media parsing, fields, scalars, leng
   assert.match(source, /Field is too long|fieldLimits/);
 });
 
-test('accepted API response means ACR HTTP success or awaited successful fallback', () => {
+test('accepted API response means configured ACR success or installed SDK ownership', () => {
   const api = route();
   const directFallback = fallback();
   assert.match(api, /AbortController/);
-  assert.match(api, /await sendLeadFallbackToMattermost/);
-  assert.match(api, /fallbackAccepted/);
+  assert.match(api, /!endpoint \|\| await forwardToAcr\(endpoint, payload\)/);
   assert.match(api, /forwarded\.ok/);
   assert.doesNotMatch(api, /await forwarded\.json\(\)/);
   assert.match(directFallback, /Promise<boolean>/);
-  assert.match(directFallback, /return response\.ok/);
-  assert.match(directFallback, /AbortController/);
+  assert.match(directFallback, /return false/);
+  assert.doesNotMatch(api, /sendLeadFallbackToMattermost/);
 });
 
 test('honeypot response is ignored without claiming delivery or producing client analytics and navigation', () => {
@@ -47,8 +46,8 @@ test('honeypot response is ignored without claiming delivery or producing client
   assert.doesNotMatch(api, /ok:\s*true,\s*ignored:\s*true/);
   assert.match(client, /result\.ignored/);
   assert.ok(client.indexOf('result.ignored') < client.indexOf('!response.ok'));
-  assert.ok(client.indexOf('result.ignored') < client.indexOf('trackLead'));
   assert.ok(client.indexOf('result.ignored') < client.indexOf("router.push('/thank-you')"));
+  assert.doesNotMatch(client, /trackLead/);
 });
 
 test('form errors expose associations and focus an actionable field', () => {

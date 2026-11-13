@@ -49,7 +49,7 @@ export default function ContactPage() {
     </section>
 
     <section className="parent-proof">
-      <div className="team-photo"><Image src="/stealth-agents-team.webp" alt="Official StealthAgents team in Bacolod" fill sizes="(max-width: 800px) 100vw, 52vw" /></div>
+      <figure className="team-photo"><Image src="/stealth-agents-team.webp" alt="Official StealthAgents team in Bacolod" fill sizes="(max-width: 800px) 100vw, 52vw" /><figcaption><a href={provenance.photo.source} rel="noopener noreferrer">Official StealthAgents team photo, Bacolod</a><span>First-party source verified {provenance.photo.verifiedOn}</span></figcaption></figure>
       <div className="parent-copy"><p className="kicker">Managed operating support</p><h2>Delivered with StealthAgents.</h2><p>StealthAgents supports recruiting, matching, and managed staffing operations. HVAC Staffing Company keeps the role centered on HVAC office workflows, while your business retains technical, financial, safety, and customer approval authority.</p><div className="official-plate"><Image src="/stealth-agents-logo-black.png" alt="StealthAgents" width={184} height={46} /><strong>Official team, Bacolod</strong></div></div>
     </section>
 

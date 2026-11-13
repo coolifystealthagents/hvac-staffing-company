@@ -48,7 +48,8 @@ test('full consultation keeps its complete contract in a compact, sensible field
   assert.match(form, /name="website_url"/);
   assert.match(form, /source === 'contact-page-consultation'/);
   assert.match(form, /fetch\('\/api\/submit-lead'/);
-  assert.match(form, /trackLead\(\{ \.\.\.payload, source \}\)/);
+  assert.match(form, /ACR captures the native submit event once/);
+  assert.doesNotMatch(form, /trackLead/);
   assert.match(form, /router\.push\('\/thank-you'\)/);
 });
 

@@ -59,8 +59,8 @@ test('review stars meet 3 to 1 contrast against white', () => {
 test('about, blog, and research indexes have prominent approved hero imagery', () => {
   const pages = [
     ['app/about/page.tsx', '/stealth-agents-team.webp'],
-    ['app/blog/page.tsx', '/october-12-2026/commercial-rooftop-unit-access-coordination.svg'],
-    ['app/research/page.tsx', '/october-12-2026/weather-normalized-hvac-dispatch-demand-forecast.svg'],
+    ['app/blog/page.tsx', '/hvac-blog-editorial.jpg'],
+    ['app/research/page.tsx', '/hvac-research-editorial.jpg'],
   ];
   for (const [file, asset] of pages) {
     const source = read(file);

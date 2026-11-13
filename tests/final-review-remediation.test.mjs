@@ -33,18 +33,20 @@ test('tracking relay parses and validates a site-bound event instead of forwardi
   assert.doesNotMatch(source, /body,\s*\n\s*cache/);
 });
 
-test('fallback includes every protected lead field and neutralizes Mattermost mentions', () => {
+test('disabled legacy fallback retains its typed contract without delivering directly', () => {
   const source = read('lib/lead-fallback-mattermost.ts');
   for (const field of ['phoneCountry', 'companyWebsite', 'source']) assert.match(source, new RegExp(field));
-  assert.match(source, /replace\(\/@/);
+  assert.match(source, /ACR alone owns lead notifications/);
+  assert.match(source, /return false/);
   const api = read('app/api/submit-lead/route.ts');
-  for (const field of ['fields.phone_country', 'fields.company_website', 'source']) assert.match(api, new RegExp(field.replace('.', '\\.')));
+  assert.doesNotMatch(api, /sendLeadFallbackToMattermost/);
 });
 
-test('accepted lead navigation is not cancelled by optional tracker failure', () => {
+test('accepted lead navigation relies on the installed ACR submit capture without duplicate tracking', () => {
   const source = read('components/LeadForm.tsx');
-  assert.match(source, /try\s*\{\s*window\.acrTracker\?\.trackLead[\s\S]*?\}\s*catch/);
-  assert.ok(source.indexOf("router.push('/thank-you')") > source.indexOf('window.acrTracker?.trackLead'));
+  assert.match(source, /ACR captures the native submit event once/);
+  assert.doesNotMatch(source, /trackLead/);
+  assert.match(source, /router\.push\('\/thank-you'\)/);
 });
 
 test('trust copy is provenance accurate and contains no unsupported selection-rate claim', () => {

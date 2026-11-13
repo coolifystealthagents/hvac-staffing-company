@@ -36,8 +36,8 @@ export const site: SiteWithServiceManual = {
   "ink": "#172d33",
   "displayFont": "Rockwell",
   "bodyFont": "Trebuchet MS",
-  "heroImage": "/hero.png",
-  "heroAlt": "HVAC ductwork, copper tubing, gauge, and blank plans arranged on a bright workshop table",
+  "heroImage": "/hvac-operations-hero.jpg",
+  "heroAlt": "HVAC service coordinator reviewing a work order while a technician checks an air handler in the workshop",
   "services": [
     {
       "slug": "dispatch-support",
