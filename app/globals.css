@@ -33,3 +33,13 @@ main{overflow-x:hidden;width:100%;max-width:100%}
 @media(max-width:600px){.hero-copy h1,.services-hero h1,.editorial-index-hero h1{font-size:clamp(2.55rem,12vw,3.7rem)}.hero-visual{height:60vh;min-height:420px}.hero-visual img{object-position:58% center}.services-hero-image img{object-position:center}.blog-filter-heading{align-items:flex-start;flex-direction:column;gap:.5rem}.blog-filter-heading>p{white-space:normal}.blog-filters{flex-wrap:nowrap;overflow-x:auto;padding:.2rem .2rem .8rem;scroll-snap-type:x proximity}.blog-filter{flex:none;scroll-snap-align:start}.article-opening h1{font-size:clamp(2.25rem,10.5vw,3.1rem)}.team-photo figcaption{left:.6rem;right:.6rem;bottom:.6rem}}
 .workflow-photo{position:relative;min-height:clamp(420px,38vw,620px);margin:0;overflow:hidden;border:2px solid #fff;box-shadow:10px 10px 0 var(--orange)}.workflow-photo img{object-position:center}.workflow-photo figcaption{position:absolute;left:1rem;bottom:1rem;z-index:1;max-width:calc(100% - 2rem);background:var(--ink);color:#fff;padding:.65rem .85rem;font-size:.75rem;font-weight:800;letter-spacing:.02em}.team-photo{aspect-ratio:1906/1080;min-height:0;align-self:center}.team-photo img{object-position:center}
 @media(max-width:900px){.workflow-photo{min-height:0;aspect-ratio:3/2}.team-photo{min-height:0}}
+
+/* Shared page safeguards within the existing visual system. */
+html{scroll-padding-top:110px}
+main,section,article,aside,figure{min-width:0}
+img{max-width:100%}
+button,a,input,select,textarea{touch-action:manipulation}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid currentColor;outline-offset:5px}
+footer nav a{display:inline-block;padding-block:5px}
+@media(max-width:600px){h1{overflow-wrap:normal;word-break:normal}p,li{overflow-wrap:break-word}table{max-width:100%}section{scroll-margin-top:100px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}

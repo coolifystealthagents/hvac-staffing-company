@@ -36,8 +36,8 @@ export const site: SiteWithServiceManual = {
   "ink": "#172d33",
   "displayFont": "Rockwell",
   "bodyFont": "Trebuchet MS",
-  "heroImage": "/hvac-staffing-operations-team.jpg",
-  "heroAlt": "Illustrative HVAC operations team reviewing a dispatch map and service schedule together",
+  "heroImage": "/optimization/home.webp",
+  "heroAlt": "Customer support staff working at office computer stations",
   "services": [
     {
       "slug": "dispatch-support",
