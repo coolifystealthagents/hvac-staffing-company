@@ -1,3 +1,4 @@
+import additionalServices from './additional-services.json';
 import type { SiteConfig } from './types';
 
 type ServiceManual = {
@@ -368,3 +369,8 @@ export const site: SiteWithServiceManual = {
   "principles": ["Role-matched selection", "Clear role boundaries", "Reviewable workflows"],
   "sources": [{ "label": "United States Environmental Protection Agency", "url": "https://www.epa.gov/section608" }]
 };
+
+site.services.push(...additionalServices);
+
+const servicePhotoAlt: Record<string,string> = {"dispatch-support": "Office support staff coordinating work at laptops", "maintenance-plan-support": "Technician working on an air-conditioning unit", "estimate-follow-up": "Professional reviewing a document on a clipboard", "customer-service": "Customer support colleagues working at office desks", "parts-warranty-admin": "Warehouse staff checking an inventory clipboard", "hvac-bookkeeping-support": "Accountant reviewing documents at a desk", "installation-coordination": "Field professional reviewing a clipboard at a work site", "service-agreement-administration": "Professional holding organized document folders"};
+for(const service of site.services){service.heroImage=`/optimization/${service.slug}.webp`;service.heroAlt=servicePhotoAlt[service.slug];}

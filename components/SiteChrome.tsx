@@ -47,13 +47,12 @@ export function Header() {
   return <>
     <a className="skip-link" href="#main-content">Skip to content</a>
     <header className="site-header">
-      <Link className="brand" href="/" aria-label={`${site.name} home`}><Image src="/logo.svg" alt="" width={42} height={42} priority /><span>{site.name}</span></Link>
-      <span className="powered">Powered by StealthAgents</span>
+      <Link className="brand" href="/" aria-label={`${site.name} home`}><Image src="/logo.svg" alt="" width={42} height={42} priority /><span>{site.name}<small className="standard-brand-credit">Powered by Stealth Agents</small></span></Link>
+
       <button ref={buttonRef} className="menu-toggle" type="button" aria-expanded={open} aria-controls="primary-navigation" onClick={() => setOpen((value) => !value)}><span aria-hidden="true">Menu</span><span className="sr-only">Toggle primary navigation</span></button>
       <nav ref={panelRef} id="primary-navigation" className={open ? 'is-open' : ''} aria-label="Primary navigation">
         {nav.map((item) => <Link key={item.href} href={item.href} aria-current={pathname === item.href ? 'page' : undefined}>{item.label}</Link>)}
       </nav>
-      <Link id="cta-global-header-bookcall" className="button primary global-header-cta" href="/contact-us">Book a free consultation</Link>
     </header>
   </>;
 }
