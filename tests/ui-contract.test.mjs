@@ -58,7 +58,7 @@ test('review stars meet 3 to 1 contrast against white', () => {
 
 test('about, blog, and research indexes have prominent approved hero imagery', () => {
   const pages = [
-    ['app/about/page.tsx', '/stealth-agents-team.webp'],
+    ['app/about/page.tsx', '/stealth-agents-bacolod-team-official.jpg'],
     ['app/blog/page.tsx', '/hvac-blog-editorial.jpg'],
     ['app/research/page.tsx', '/hvac-research-editorial.jpg'],
   ];

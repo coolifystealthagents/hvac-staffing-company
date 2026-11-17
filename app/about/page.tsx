@@ -17,7 +17,7 @@ export default function AboutPage() {
         <h1>Better delegation starts with a better role.</h1>
         <p>We help {site.audience} shape focused remote support roles around real workflows, useful boundaries, and clear review points.</p>
       </div>
-      <Image className="page-hero-image" src="/stealth-agents-team.webp" alt="Official StealthAgents team in Bacolod" width={1200} height={800} priority />
+      <Image className="page-hero-image" src="/stealth-agents-bacolod-team-official.jpg" alt="Stealth Agents team wearing black shirts in front of the City of Bacolod landmark" width={1906} height={1080} priority />
     </header>
 
     <section className="content-wrap">

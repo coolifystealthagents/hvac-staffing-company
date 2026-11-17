@@ -9,12 +9,17 @@
     "createdOn": "2026-11-17",
     "subject": "Illustrative HVAC operations staffing and dispatch workflow scene"
   },
+  "workingModelImage": {
+    "asset": "/hvac-approved-handoff-review.jpg",
+    "sourceType": "Original OpenAI ImageGen editorial asset",
+    "createdOn": "2026-11-17",
+    "subject": "Illustrative HVAC dispatch handoff and records review scene"
+  },
   "photo": {
-    "asset": "/stealth-agents-team.webp",
-    "source": "https://stealthagents.com/",
-    "sourceType": "Official StealthAgents first-party website",
-    "location": "Bacolod",
-    "verifiedOn": "2026-10-19"
+    "asset": "/stealth-agents-bacolod-team-official.jpg",
+    "source": "https://stealthagents.com/wp-content/uploads/2025/07/stealth-deck.pdf",
+    "sourceType": "Official Stealth Agents first-party company deck",
+    "location": "City of Bacolod landmark"
   },
   "records": [
     { "headline": "More room for strategic work", "body": "Lindsay has been incredible. She handles the tactical work, which has freed me up to focus on bigger-picture initiatives.", "name": "Chad Sublet", "detail": "Business Owner" },

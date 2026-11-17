@@ -36,7 +36,7 @@ test('contact owns the complete form, ten approved reviews, and no scheduler', (
   assert.match(source, /review-rail/);
   assert.match(source, /LeadForm source="contact-page-consultation"/);
   assert.match(source, /Official team, Bacolod/);
-  assert.match(source, /stealth-agents-team\.webp/);
+  assert.match(source, /stealth-agents-bacolod-team-official\.jpg/);
   assert.match(source, /stealth-agents-logo-black\.png/);
   assert.doesNotMatch(source, /oncehub|booking-frame|iframe/i);
 });
@@ -78,7 +78,7 @@ test('blog and research details share complete interactive article framing', () 
 });
 
 test('uniform logos, official assets, route canonicals, and noindex confirmations', () => {
-  for (const file of ['public/logo.svg', 'public/stealth-agents-logo-black.png', 'public/stealth-agents-team.webp']) assert.ok(existsSync(join(root, file)), file);
+  for (const file of ['public/logo.svg', 'public/stealth-agents-logo-black.png', 'public/stealth-agents-bacolod-team-official.jpg', 'public/hvac-approved-handoff-review.jpg']) assert.ok(existsSync(join(root, file)), file);
   assert.match(layout(), /icons:.*logo\.svg/s);
   assert.ok((chrome().match(/\/logo\.svg/g) || []).length >= 2);
   assert.match(read('app/services/page.tsx'), /canonical:\s*['"]\/services/);
