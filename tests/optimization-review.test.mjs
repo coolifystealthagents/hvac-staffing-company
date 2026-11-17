@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { createHash } from 'node:crypto';
 
 const root = new URL('..', import.meta.url).pathname;
 const read = (path) => readFileSync(join(root, path), 'utf8');
@@ -43,4 +44,18 @@ test('contact team photo carries repository-approved first-party attribution', (
   const contact = read('app/contact-us/page.tsx');
   assert.match(contact, /Official StealthAgents team photo, Bacolod/);
   assert.match(contact, /provenance\.photo\.source/);
+  const photo = readFileSync(join(root, 'public/stealth-agents-team.webp'));
+  assert.equal(createHash('sha256').update(photo).digest('hex'), '58d4a9d71f30927c0447a44ce91b818ba7a5f6ebcae495b64acaf5518161c721');
+});
+
+test('reviewed homepage and services duplication is absent without changing destinations', () => {
+  const home = read('components/Marketing.tsx');
+  const services = read('app/services/page.tsx');
+  assert.doesNotMatch(home, /Start with one recurring office queue|hero-offer/);
+  for (const removed of ['Selection guidance', 'Decision guidance', 'Start where operating context is being lost', 'What makes a workflow ready']) {
+    assert.doesNotMatch(services, new RegExp(removed));
+  }
+  assert.match(services, /id="service-directory"/);
+  assert.match(services, /site\.services\.map/);
+  assert.match(services, /href=\{`\/services\/\$\{service\.slug\}`\}/);
 });
