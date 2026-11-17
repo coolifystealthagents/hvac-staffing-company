@@ -3,6 +3,12 @@
   "sourceType": "Official StealthAgents first-party homepage",
   "verifiedOn": "2026-10-16",
   "ratingShownBySource": 5,
+  "homepageHero": {
+    "asset": "/hvac-staffing-operations-team.jpg",
+    "sourceType": "Original OpenAI ImageGen editorial asset",
+    "createdOn": "2026-11-17",
+    "subject": "Illustrative HVAC operations staffing and dispatch workflow scene"
+  },
   "photo": {
     "asset": "/stealth-agents-team.webp",
     "source": "https://stealthagents.com/",

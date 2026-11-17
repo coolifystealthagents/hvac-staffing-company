@@ -27,7 +27,7 @@ export const site: SiteWithServiceManual = {
   "eyebrow": "Built for the rhythm of HVAC work",
   "hero": "Keep the field moving",
   "heroAccent": "from the office.",
-  "heroBody": "Specialist remote staff support dispatch records, maintenance plan follow up, estimate coordination, customer communication, and back office workflows for growing HVAC teams.",
+  "heroBody": "Managed remote staffing for HVAC office workflows with documented handoffs, clear review points, and decisions retained by your team.",
   "manifesto": "Strong field service depends on an office system that never loses the next step.",
   "primary": "#e35c28",
   "secondary": "#8dc6d2",
@@ -36,8 +36,8 @@ export const site: SiteWithServiceManual = {
   "ink": "#172d33",
   "displayFont": "Rockwell",
   "bodyFont": "Trebuchet MS",
-  "heroImage": "/hvac-operations-hero.jpg",
-  "heroAlt": "HVAC service coordinator reviewing a work order while a technician checks an air handler in the workshop",
+  "heroImage": "/hvac-staffing-operations-team.jpg",
+  "heroAlt": "Illustrative HVAC operations team reviewing a dispatch map and service schedule together",
   "services": [
     {
       "slug": "dispatch-support",

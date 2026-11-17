@@ -9,13 +9,13 @@ const read = (path) => readFileSync(join(root, path), 'utf8');
 
 test('home, services, blog, and research use distinct relevant visual assets', () => {
   const assets = [
-    'public/hvac-operations-hero.jpg',
+    'public/hvac-staffing-operations-team.jpg',
     'public/hvac-services-workflow.jpg',
     'public/hvac-blog-editorial.jpg',
     'public/hvac-research-editorial.jpg',
   ];
   for (const asset of assets) assert.ok(existsSync(join(root, asset)), asset);
-  assert.match(read('lib/site.ts'), /"heroImage": "\/hvac-operations-hero\.jpg"/);
+  assert.match(read('lib/site.ts'), /"heroImage": "\/hvac-staffing-operations-team\.jpg"/);
   assert.match(read('app/services/page.tsx'), /\/hvac-services-workflow\.jpg/);
   assert.match(read('app/blog/page.tsx'), /\/hvac-blog-editorial\.jpg/);
   assert.match(read('app/research/page.tsx'), /\/hvac-research-editorial\.jpg/);
@@ -50,8 +50,11 @@ test('contact team photo carries repository-approved first-party attribution', (
 
 test('reviewed homepage and services duplication is absent without changing destinations', () => {
   const home = read('components/Marketing.tsx');
+  const site = read('lib/site.ts');
   const services = read('app/services/page.tsx');
-  assert.doesNotMatch(home, /Start with one recurring office queue|hero-offer/);
+  assert.doesNotMatch(home, /Start with one recurring office queue|hero-offer|site\.heroBody/);
+  assert.doesNotMatch(site, /Specialist remote staff support dispatch records/);
+  assert.match(site, /"heroImage": "\/hvac-staffing-operations-team\.jpg"/);
   for (const removed of ['Selection guidance', 'Decision guidance', 'Start where operating context is being lost', 'What makes a workflow ready']) {
     assert.doesNotMatch(services, new RegExp(removed));
   }
