@@ -10,6 +10,7 @@ import { november09BlogPosts } from './november09-blog';
 import { november10BlogPosts } from './november10-blog';
 import { november17BlogPosts } from './november17-blog';
 import { november18BlogPosts } from './november18-blog';
+import { november19BlogPosts } from './november19-blog';
 import { november16BlogPosts } from './november16-blog';
 import { november11BlogPosts } from './november11-blog';
 import { november08BlogPosts } from './november08-blog';
@@ -22,6 +23,7 @@ import { november09ResearchPosts } from './november09-research';
 import { november10ResearchPosts } from './november10-research';
 import { november17ResearchPosts } from './november17-research';
 import { november18ResearchPosts } from './november18-research';
+import { november19ResearchPosts } from './november19-research';
 import { november16ResearchPosts } from './november16-research';
 import { november11ResearchPosts } from './november11-research';
 import { november08ResearchPosts } from './november08-research';
@@ -46,7 +48,7 @@ export const blogPosts: BlogPost[] = [
   ...november05BlogPosts,
   ...november03BlogPosts,
   ...november04BlogPosts,
-  ...november09BlogPosts, ...november10BlogPosts, ...november17BlogPosts, ...november18BlogPosts, ...november16BlogPosts, ...november11BlogPosts, ...november08BlogPosts,
+  ...november09BlogPosts, ...november10BlogPosts, ...november17BlogPosts, ...november18BlogPosts, ...november19BlogPosts, ...november16BlogPosts, ...november11BlogPosts, ...november08BlogPosts,
   ...november07BlogPosts,
   ...november02BlogPosts,
   ...november01BlogPosts,
@@ -524,7 +526,7 @@ export const researchPosts: ResearchPost[] = [
   ...november05ResearchPosts,
   ...november03ResearchPosts,
   ...november04ResearchPosts,
-  ...november09ResearchPosts, ...november10ResearchPosts, ...november17ResearchPosts, ...november18ResearchPosts, ...november16ResearchPosts, ...november11ResearchPosts, ...november08ResearchPosts,
+  ...november09ResearchPosts, ...november10ResearchPosts, ...november17ResearchPosts, ...november18ResearchPosts, ...november19ResearchPosts, ...november16ResearchPosts, ...november11ResearchPosts, ...november08ResearchPosts,
   ...november07ResearchPosts,
   ...november02ResearchPosts,
   ...november01ResearchPosts,
