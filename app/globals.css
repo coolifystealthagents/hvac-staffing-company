@@ -60,3 +60,5 @@ header .brand>span{min-width:0}header nav{margin-left:auto}
 
 
 .workflow-steps,.method ol{list-style:none;padding-left:0}.workflow-steps>li:before{content:none}
+
+@media(max-width:900px){.article-mobile-toc[open]{position:static}}
