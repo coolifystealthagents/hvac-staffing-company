@@ -76,11 +76,11 @@ export const november04ResearchPosts: ResearchPost[] = [
     ],
     "sources": [
       {
-        "label": "GAO — internal control standards",
+        "label": "GAO: internal control standards",
         "url": "https://www.gao.gov/greenbook"
       },
       {
-        "label": "GAO — internal control standards",
+        "label": "GAO: internal control standards",
         "url": "https://www.gao.gov/greenbook"
       },
       {
@@ -169,7 +169,7 @@ export const november04ResearchPosts: ResearchPost[] = [
         "url": "https://www.sba.gov/business-guide/manage-your-business"
       },
       {
-        "label": "GAO — internal control standards",
+        "label": "GAO: internal control standards",
         "url": "https://www.gao.gov/greenbook"
       },
       {
@@ -254,11 +254,11 @@ export const november04ResearchPosts: ResearchPost[] = [
     ],
     "sources": [
       {
-        "label": "GAO — internal control standards",
+        "label": "GAO: internal control standards",
         "url": "https://www.gao.gov/greenbook"
       },
       {
-        "label": "GAO — internal control standards",
+        "label": "GAO: internal control standards",
         "url": "https://www.gao.gov/greenbook"
       },
       {
@@ -343,11 +343,11 @@ export const november04ResearchPosts: ResearchPost[] = [
     ],
     "sources": [
       {
-        "label": "U.S. EPA — Section 608 refrigerant",
+        "label": "U.S. EPA: Section 608 refrigerant",
         "url": "https://www.epa.gov/section608"
       },
       {
-        "label": "GAO — internal control standards",
+        "label": "GAO: internal control standards",
         "url": "https://www.gao.gov/greenbook"
       },
       {
@@ -436,7 +436,7 @@ export const november04ResearchPosts: ResearchPost[] = [
         "url": "https://www.sba.gov/business-guide/manage-your-business"
       },
       {
-        "label": "GAO — internal control standards",
+        "label": "GAO: internal control standards",
         "url": "https://www.gao.gov/greenbook"
       },
       {
@@ -525,7 +525,7 @@ export const november04ResearchPosts: ResearchPost[] = [
         "url": "https://www.osha.gov/"
       },
       {
-        "label": "GAO — internal control standards",
+        "label": "GAO: internal control standards",
         "url": "https://www.gao.gov/greenbook"
       },
       {
@@ -610,11 +610,11 @@ export const november04ResearchPosts: ResearchPost[] = [
     ],
     "sources": [
       {
-        "label": "IRS — recordkeeping",
+        "label": "IRS: recordkeeping",
         "url": "https://www.irs.gov/businesses/small-businesses-self-employed/recordkeeping"
       },
       {
-        "label": "GAO — internal control standards",
+        "label": "GAO: internal control standards",
         "url": "https://www.gao.gov/greenbook"
       },
       {

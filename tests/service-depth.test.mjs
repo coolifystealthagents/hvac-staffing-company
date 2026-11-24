@@ -9,9 +9,26 @@ const read = (path) => readFileSync(join(root, path), 'utf8');
 function serviceRecords() {
   const source = read('lib/site.ts');
   const objectStart = source.indexOf('{', source.indexOf('export const site'));
-  const objectEnd = source.lastIndexOf('};');
-  assert.ok(objectStart > -1 && objectEnd > objectStart, 'site config object is readable');
-  return JSON.parse(source.slice(objectStart, objectEnd + 1)).services;
+  assert.ok(objectStart > -1, 'site config object is readable');
+  let depth = 0;
+  let inString = false;
+  let escaped = false;
+  for (let index = objectStart; index < source.length; index += 1) {
+    const character = source[index];
+    if (inString) {
+      if (escaped) escaped = false;
+      else if (character === '\\') escaped = true;
+      else if (character === '"') inString = false;
+      continue;
+    }
+    if (character === '"') inString = true;
+    else if (character === '{') depth += 1;
+    else if (character === '}') {
+      depth -= 1;
+      if (depth === 0) return JSON.parse(source.slice(objectStart, index + 1)).services;
+    }
+  }
+  assert.fail('site config object has balanced JSON braces');
 }
 
 const expectedSlugs = [

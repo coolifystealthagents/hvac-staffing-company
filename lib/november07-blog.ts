@@ -75,7 +75,7 @@ export const november07BlogPosts: BlogPost[] = [
     "internalService": "/services/parts-warranty-admin",
     "internalSibling": "/blog/hvac-control-a-maintenance-agreement-price-increase-notice",
     "source": {
-      "label": "U.S. Small Business Administration — manage your business",
+      "label": "U.S. Small Business Administration: manage your business",
       "url": "https://www.sba.gov/business-guide/manage-your-business"
     }
   },
@@ -154,7 +154,7 @@ export const november07BlogPosts: BlogPost[] = [
     "internalService": "/services/maintenance-plan-support",
     "internalSibling": "/blog/hvac-reconcile-a-warranty-labor-credit",
     "source": {
-      "label": "U.S. Environmental Protection Agency — Section 608 refrigerant",
+      "label": "U.S. Environmental Protection Agency: Section 608 refrigerant",
       "url": "https://www.epa.gov/section608"
     }
   },
@@ -233,7 +233,7 @@ export const november07BlogPosts: BlogPost[] = [
     "internalService": "/services/parts-warranty-admin",
     "internalSibling": "/blog/hvac-track-a-permit-inspection-date-change",
     "source": {
-      "label": "U.S. Small Business Administration — manage your business",
+      "label": "U.S. Small Business Administration: manage your business",
       "url": "https://www.sba.gov/business-guide/manage-your-business"
     }
   },
@@ -312,7 +312,7 @@ export const november07BlogPosts: BlogPost[] = [
     "internalService": "/services/dispatch-support",
     "internalSibling": "/blog/hvac-verify-a-technician-epa-certification-renewal",
     "source": {
-      "label": "U.S. Environmental Protection Agency — Section 608 refrigerant",
+      "label": "U.S. Environmental Protection Agency: Section 608 refrigerant",
       "url": "https://www.epa.gov/section608"
     }
   },
@@ -391,7 +391,7 @@ export const november07BlogPosts: BlogPost[] = [
     "internalService": "/services/dispatch-support",
     "internalSibling": "/blog/hvac-control-a-parts-core-return",
     "source": {
-      "label": "U.S. Small Business Administration — manage your business",
+      "label": "U.S. Small Business Administration: manage your business",
       "url": "https://www.sba.gov/business-guide/manage-your-business"
     }
   },
@@ -470,7 +470,7 @@ export const november07BlogPosts: BlogPost[] = [
     "internalService": "/services/parts-warranty-admin",
     "internalSibling": "/blog/hvac-reconcile-an-after-hours-call-premium",
     "source": {
-      "label": "U.S. Environmental Protection Agency — Section 608 refrigerant",
+      "label": "U.S. Environmental Protection Agency: Section 608 refrigerant",
       "url": "https://www.epa.gov/section608"
     }
   },
@@ -549,7 +549,7 @@ export const november07BlogPosts: BlogPost[] = [
     "internalService": "/services/hvac-bookkeeping-support",
     "internalSibling": "/blog/hvac-verify-a-customer-equipment-registration",
     "source": {
-      "label": "U.S. Small Business Administration — manage your business",
+      "label": "U.S. Small Business Administration: manage your business",
       "url": "https://www.sba.gov/business-guide/manage-your-business"
     }
   },
@@ -628,7 +628,7 @@ export const november07BlogPosts: BlogPost[] = [
     "internalService": "/services/parts-warranty-admin",
     "internalSibling": "/blog/hvac-verify-a-refrigerant-cylinder-return-before-credit",
     "source": {
-      "label": "U.S. Environmental Protection Agency — Section 608 refrigerant",
+      "label": "U.S. Environmental Protection Agency: Section 608 refrigerant",
       "url": "https://www.epa.gov/section608"
     }
   }

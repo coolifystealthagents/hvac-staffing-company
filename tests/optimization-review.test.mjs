@@ -23,9 +23,21 @@ test('home, services, blog, and research use distinct relevant visual assets', (
 
 test('blog category controls filter, expose active state, and reset without replacing article links', () => {
   const source = read('components/BlogIndex.tsx');
-  for (const contract of ['aria-pressed', 'chooseCategory', 'Reset filter', 'window.history.replaceState', 'aria-live']) assert.match(source, new RegExp(contract));
+  for (const contract of ['value={activeCategory}', 'chooseCategory', 'Reset filter', 'window.history.replaceState', 'aria-live']) assert.match(source, new RegExp(contract));
   assert.match(source, /<Link className="article-card" href=\{`\/blog\/\$\{post\.slug\}`\}/);
+  assert.match(source, /<select className="library-filter-select"/);
+  assert.match(source, /type BlogListing = Pick<BlogPost/);
+  assert.match(read('app/blog/page.tsx'), /const listings=blogPosts\.map/);
   assert.match(source, /type="button"/);
+});
+
+test('research index filters by cluster and passes only card fields to the client', () => {
+  const index = read('components/ResearchIndex.tsx');
+  for (const contract of ['value={activeCluster}', 'chooseCluster', 'Reset filter', "URLSearchParams\\(window\\.location\\.search\\)\\.get\\('cluster'\\)", 'window.history.replaceState', 'aria-live']) assert.match(index, new RegExp(contract));
+  assert.match(index, /<select className="library-filter-select"/);
+  assert.match(index, /href=\{`\/research\/\$\{post\.slug\}`\}/);
+  assert.match(read('app/research/page.tsx'), /const listings=researchPosts\.map/);
+  assert.match(read('app/research/[slug]/page.tsx'), /item\.cluster === post\.cluster/);
 });
 
 test('article framing has one responsive TOC system and closes mobile disclosure after anchor choice', () => {
@@ -60,12 +72,25 @@ test('reviewed homepage and services duplication is absent without changing dest
   assert.match(home, /hvac-approved-handoff-review\.jpg/);
   assert.match(home, /Illustrative dispatch handoff and records review/);
   assert.doesNotMatch(home, /workflow-diagram/);
+  assert.match(home, /Common office pressure points/);
   assert.doesNotMatch(site, /Specialist remote staff support dispatch records/);
   assert.match(site, /"heroImage": "\/hvac-staffing-operations-team\.jpg"/);
+  assert.match(services, /\/hvac-services-workflow\.jpg/);
+  assert.match(read('app/globals.css'), /\.service-directory\{min-width:0\}/);
   for (const removed of ['Selection guidance', 'Decision guidance', 'Start where operating context is being lost', 'What makes a workflow ready']) {
     assert.doesNotMatch(services, new RegExp(removed));
   }
   assert.match(services, /id="service-directory"/);
   assert.match(services, /site\.services\.map/);
   assert.match(services, /href=\{`\/services\/\$\{service\.slug\}`\}/);
+});
+
+test('article sidebars lead to the associated service and related editorial material', () => {
+  const blog = read('app/blog/[slug]/page.tsx');
+  const research = read('app/research/[slug]/page.tsx');
+  assert.match(blog, /post\.internalService/);
+  assert.match(blog, /post\.internalSibling/);
+  assert.match(blog, /item\.category === post\.category/);
+  assert.match(research, /item\.cluster === post\.cluster/);
+  assert.match(read('components/ArticleFrame.tsx'), /Related resources/);
 });
