@@ -87,7 +87,7 @@ export const november04BlogPosts: BlogPost[] = [
     "internalService": "/services/dispatch-support",
     "internalSibling": "/blog/hvac-control-a-warranty-registration-submission",
     "source": {
-      "label": "GAO — internal control standards",
+      "label": "GAO: internal control standards",
       "url": "https://www.gao.gov/greenbook"
     }
   },
@@ -178,7 +178,7 @@ export const november04BlogPosts: BlogPost[] = [
     "internalService": "/services/parts-warranty-admin",
     "internalSibling": "/blog/hvac-handle-a-maintenance-plan-price-change",
     "source": {
-      "label": "GAO — internal control standards",
+      "label": "GAO: internal control standards",
       "url": "https://www.gao.gov/greenbook"
     }
   },
@@ -269,7 +269,7 @@ export const november04BlogPosts: BlogPost[] = [
     "internalService": "/services/maintenance-plan-support",
     "internalSibling": "/blog/hvac-keep-a-refrigerant-cylinder-return-log",
     "source": {
-      "label": "GAO — internal control standards",
+      "label": "GAO: internal control standards",
       "url": "https://www.gao.gov/greenbook"
     }
   },
@@ -360,7 +360,7 @@ export const november04BlogPosts: BlogPost[] = [
     "internalService": "/services/parts-warranty-admin",
     "internalSibling": "/blog/hvac-track-a-commercial-service-agreement-renewal",
     "source": {
-      "label": "GAO — internal control standards",
+      "label": "GAO: internal control standards",
       "url": "https://www.gao.gov/greenbook"
     }
   },
@@ -451,7 +451,7 @@ export const november04BlogPosts: BlogPost[] = [
     "internalService": "/services/maintenance-plan-support",
     "internalSibling": "/blog/hvac-standardize-a-customer-equipment-photo-intake",
     "source": {
-      "label": "GAO — internal control standards",
+      "label": "GAO: internal control standards",
       "url": "https://www.gao.gov/greenbook"
     }
   },
@@ -542,7 +542,7 @@ export const november04BlogPosts: BlogPost[] = [
     "internalService": "/services/customer-service",
     "internalSibling": "/blog/hvac-reconcile-a-subcontractor-invoice",
     "source": {
-      "label": "GAO — internal control standards",
+      "label": "GAO: internal control standards",
       "url": "https://www.gao.gov/greenbook"
     }
   },
@@ -633,7 +633,7 @@ export const november04BlogPosts: BlogPost[] = [
     "internalService": "/services/hvac-bookkeeping-support",
     "internalSibling": "/blog/hvac-audit-a-dispatch-board-priority-change",
     "source": {
-      "label": "GAO — internal control standards",
+      "label": "GAO: internal control standards",
       "url": "https://www.gao.gov/greenbook"
     }
   },
@@ -724,7 +724,7 @@ export const november04BlogPosts: BlogPost[] = [
     "internalService": "/services/dispatch-support",
     "internalSibling": "/blog/hvac-verify-a-technician-dispatch-address-before-the-route",
     "source": {
-      "label": "GAO — internal control standards",
+      "label": "GAO: internal control standards",
       "url": "https://www.gao.gov/greenbook"
     }
   }

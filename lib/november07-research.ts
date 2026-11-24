@@ -64,15 +64,15 @@ export const november07ResearchPosts: ResearchPost[] = [
     ],
     "sources": [
       {
-        "label": "U.S. Environmental Protection Agency — Section 608 refrigerant",
+        "label": "U.S. Environmental Protection Agency: Section 608 refrigerant",
         "url": "https://www.epa.gov/section608"
       },
       {
-        "label": "U.S. Government Accountability Office — internal control standards",
+        "label": "U.S. Government Accountability Office: internal control standards",
         "url": "https://www.gao.gov/greenbook"
       },
       {
-        "label": "U.S. Small Business Administration — manage your business",
+        "label": "U.S. Small Business Administration: manage your business",
         "url": "https://www.sba.gov/business-guide/manage-your-business"
       }
     ]
@@ -141,15 +141,15 @@ export const november07ResearchPosts: ResearchPost[] = [
     ],
     "sources": [
       {
-        "label": "U.S. Federal Trade Commission — advertising and marketing guidance",
+        "label": "U.S. Federal Trade Commission: advertising and marketing guidance",
         "url": "https://www.ftc.gov/business-guidance/advertising-marketing"
       },
       {
-        "label": "U.S. Government Accountability Office — internal control standards",
+        "label": "U.S. Government Accountability Office: internal control standards",
         "url": "https://www.gao.gov/greenbook"
       },
       {
-        "label": "U.S. Small Business Administration — manage your business",
+        "label": "U.S. Small Business Administration: manage your business",
         "url": "https://www.sba.gov/business-guide/manage-your-business"
       }
     ]
@@ -218,15 +218,15 @@ export const november07ResearchPosts: ResearchPost[] = [
     ],
     "sources": [
       {
-        "label": "U.S. Government Accountability Office — internal control standards",
+        "label": "U.S. Government Accountability Office: internal control standards",
         "url": "https://www.gao.gov/greenbook"
       },
       {
-        "label": "U.S. Government Accountability Office — internal control standards",
+        "label": "U.S. Government Accountability Office: internal control standards",
         "url": "https://www.gao.gov/greenbook"
       },
       {
-        "label": "U.S. Small Business Administration — manage your business",
+        "label": "U.S. Small Business Administration: manage your business",
         "url": "https://www.sba.gov/business-guide/manage-your-business"
       }
     ]
@@ -299,11 +299,11 @@ export const november07ResearchPosts: ResearchPost[] = [
         "url": "https://www.osha.gov/"
       },
       {
-        "label": "U.S. Government Accountability Office — internal control standards",
+        "label": "U.S. Government Accountability Office: internal control standards",
         "url": "https://www.gao.gov/greenbook"
       },
       {
-        "label": "U.S. Small Business Administration — manage your business",
+        "label": "U.S. Small Business Administration: manage your business",
         "url": "https://www.sba.gov/business-guide/manage-your-business"
       }
     ]
@@ -372,15 +372,15 @@ export const november07ResearchPosts: ResearchPost[] = [
     ],
     "sources": [
       {
-        "label": "U.S. Environmental Protection Agency — Section 608 refrigerant",
+        "label": "U.S. Environmental Protection Agency: Section 608 refrigerant",
         "url": "https://www.epa.gov/section608"
       },
       {
-        "label": "U.S. Government Accountability Office — internal control standards",
+        "label": "U.S. Government Accountability Office: internal control standards",
         "url": "https://www.gao.gov/greenbook"
       },
       {
-        "label": "U.S. Small Business Administration — manage your business",
+        "label": "U.S. Small Business Administration: manage your business",
         "url": "https://www.sba.gov/business-guide/manage-your-business"
       }
     ]
@@ -449,15 +449,15 @@ export const november07ResearchPosts: ResearchPost[] = [
     ],
     "sources": [
       {
-        "label": "U.S. Internal Revenue Service — recordkeeping",
+        "label": "U.S. Internal Revenue Service: recordkeeping",
         "url": "https://www.irs.gov/businesses/small-businesses-self-employed/recordkeeping"
       },
       {
-        "label": "U.S. Government Accountability Office — internal control standards",
+        "label": "U.S. Government Accountability Office: internal control standards",
         "url": "https://www.gao.gov/greenbook"
       },
       {
-        "label": "U.S. Small Business Administration — manage your business",
+        "label": "U.S. Small Business Administration: manage your business",
         "url": "https://www.sba.gov/business-guide/manage-your-business"
       }
     ]
@@ -526,15 +526,15 @@ export const november07ResearchPosts: ResearchPost[] = [
     ],
     "sources": [
       {
-        "label": "U.S. Government Accountability Office — internal control standards",
+        "label": "U.S. Government Accountability Office: internal control standards",
         "url": "https://www.gao.gov/greenbook"
       },
       {
-        "label": "U.S. Government Accountability Office — internal control standards",
+        "label": "U.S. Government Accountability Office: internal control standards",
         "url": "https://www.gao.gov/greenbook"
       },
       {
-        "label": "U.S. Small Business Administration — manage your business",
+        "label": "U.S. Small Business Administration: manage your business",
         "url": "https://www.sba.gov/business-guide/manage-your-business"
       }
     ]

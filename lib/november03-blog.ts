@@ -87,7 +87,7 @@ export const november03BlogPosts: BlogPost[] = [
     "internalService": "/services/parts-warranty-admin",
     "internalSibling": "/blog/hvac-handle-a-warranty-part-return-without-losing-the-claim",
     "source": {
-      "label": "U.S. Environmental Protection Agency — Section 608 refrigerant",
+      "label": "U.S. Environmental Protection Agency: Section 608 refrigerant",
       "url": "https://www.epa.gov/section608"
     }
   },
@@ -178,7 +178,7 @@ export const november03BlogPosts: BlogPost[] = [
     "internalService": "/services/parts-warranty-admin",
     "internalSibling": "/blog/hvac-keep-a-refrigerant-purchase-log-tied-to-the-job",
     "source": {
-      "label": "U.S. Small Business Administration — manage your business",
+      "label": "U.S. Small Business Administration: manage your business",
       "url": "https://www.sba.gov/business-guide/manage-your-business"
     }
   },
@@ -269,7 +269,7 @@ export const november03BlogPosts: BlogPost[] = [
     "internalService": "/services/maintenance-plan-support",
     "internalSibling": "/blog/hvac-handle-a-warranty-part-return-without-losing-the-claim",
     "source": {
-      "label": "U.S. Small Business Administration — manage your business",
+      "label": "U.S. Small Business Administration: manage your business",
       "url": "https://www.sba.gov/business-guide/manage-your-business"
     }
   },
@@ -360,7 +360,7 @@ export const november03BlogPosts: BlogPost[] = [
     "internalService": "/services/estimate-follow-up",
     "internalSibling": "/blog/hvac-build-a-maintenance-plan-renewal-outreach-queue",
     "source": {
-      "label": "U.S. Federal Trade Commission — advertising and marketing guidance",
+      "label": "U.S. Federal Trade Commission: advertising and marketing guidance",
       "url": "https://www.ftc.gov/business-guidance/advertising-marketing"
     }
   },
@@ -542,7 +542,7 @@ export const november03BlogPosts: BlogPost[] = [
     "internalService": "/services/hvac-bookkeeping-support",
     "internalSibling": "/blog/hvac-triage-a-no-heat-call-before-creating-a-dispatch",
     "source": {
-      "label": "U.S. Internal Revenue Service — recordkeeping",
+      "label": "U.S. Internal Revenue Service: recordkeeping",
       "url": "https://www.irs.gov/businesses/small-businesses-self-employed/recordkeeping"
     }
   },
@@ -633,7 +633,7 @@ export const november03BlogPosts: BlogPost[] = [
     "internalService": "/services/customer-service",
     "internalSibling": "/blog/hvac-reconcile-a-supplier-parts-invoice-with-the-purchase-order",
     "source": {
-      "label": "U.S. Small Business Administration — manage your business",
+      "label": "U.S. Small Business Administration: manage your business",
       "url": "https://www.sba.gov/business-guide/manage-your-business"
     }
   },
@@ -724,7 +724,7 @@ export const november03BlogPosts: BlogPost[] = [
     "internalService": "/services/dispatch-support",
     "internalSibling": "/blog/hvac-standardize-a-customer-callback-script-for-delayed-arrival",
     "source": {
-      "label": "U.S. Government Accountability Office — internal control standards",
+      "label": "U.S. Government Accountability Office: internal control standards",
       "url": "https://www.gao.gov/greenbook"
     }
   }

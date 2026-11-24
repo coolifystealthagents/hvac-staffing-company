@@ -53,13 +53,14 @@ export function Header() {
       <nav ref={panelRef} id="primary-navigation" className={open ? 'is-open' : ''} aria-label="Primary navigation">
         {nav.map((item) => <Link key={item.href} href={item.href} aria-current={pathname === item.href ? 'page' : undefined}>{item.label}</Link>)}
       </nav>
+      <Link id="cta-global-header-bookcall" className="button primary global-header-cta" href="/contact-us">Book a free consultation</Link>
     </header>
   </>;
 }
 
 export function Footer() {
   return <footer className="site-footer">
-    <div className="footer-brand"><Link className="brand inverse" href="/"><Image src="/logo.svg" alt="" width={48} height={48} /><span>{site.name}</span></Link><p>Remote office staffing systems for HVAC owners and service managers.</p><strong>Powered by StealthAgents</strong></div>
+    <div className="footer-brand"><Link className="brand inverse" href="/"><Image src="/logo.svg" alt="" width={48} height={48} /><span>{site.name}</span></Link><p>Remote office staffing systems for HVAC owners and service managers.</p><strong>Powered by StealthAgents</strong><p><Link className="button primary" href="/contact-us">Map your first workflow</Link></p></div>
     <nav className="footer-links" aria-label="Footer navigation">{nav.map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}<Link href="/about">About</Link><Link href="/blog">Blog</Link><Link href="/research">Research</Link><Link href="/privacy">Privacy</Link><Link href="/terms">Terms</Link></nav>
     <p className="copyright">© {new Date().getFullYear()} {site.name}</p>
   </footer>;

@@ -54,7 +54,7 @@ export function ArticleFrame({ title, summary, category, kind, publishedAt, read
         {toc}
         <section><h2>Article details</h2><p>Published by the HVAC Staffing Company editorial team for owners and service managers.</p></section>
         {sources.length > 0 && <section><h2>Sources</h2>{sources.map((source) => <a key={source.url} href={source.url} rel="noopener noreferrer">{source.label}</a>)}</section>}
-        <section><h2>Related reading</h2>{related.map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}</section>
+        <section><h2>Related resources</h2>{related.map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}</section>
         <Link id={kind === 'blog' ? 'cta-blog-sidebar-schedulecall' : undefined} className="button primary" href="/contact-us">Map your workflow</Link>
       </aside>
     </div>

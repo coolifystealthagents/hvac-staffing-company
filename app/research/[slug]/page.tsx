@@ -23,6 +23,16 @@ export default async function ResearchPostPage({ params }: { params: Promise<{ s
   ];
   const readerSections = readerSectionsForResearch(post);
   const sections = guidance?.sections ?? readerSections ?? (post.sections?.length ? [{ heading: 'Key finding', paragraphs: [post.finding] }, ...post.sections] : fallback);
-  const related = researchPosts.filter((item) => item.slug !== post.slug).slice(0, 3).map((item) => ({ href: `/research/${item.slug}`, label: item.title }));
+  const related = researchPosts
+    .filter((item) => item.slug !== post.slug && item.cluster === post.cluster)
+    .slice(0, 3)
+    .map((item) => ({ href: `/research/${item.slug}`, label: item.title }));
+  if (related.length < 3) {
+    for (const item of researchPosts.filter((item) => item.slug !== post.slug)) {
+      const href = `/research/${item.slug}`;
+      if (related.length >= 3) break;
+      if (!related.some((link) => link.href === href)) related.push({ href, label: item.title });
+    }
+  }
   return <ArticleFrame kind="research" title={post.title} summary={post.summary} category={`Research: ${post.cluster}`} publishedAt={post.publishedAt} thumbnail={guidance?.artwork.src ?? post.thumbnail} thumbnailAlt={guidance?.artwork.alt} sections={sections} related={related} sources={guidance || readerSections ? [] : post.sources} />;
 }
