@@ -94,9 +94,12 @@ test('shared footer groups company and resource links and keeps legal links with
   assert.match(footer, /Map your first workflow<\/Link>/);
   assert.match(footer, /className="footer-bottom">[\s\S]*className="copyright"[\s\S]*href="\/privacy">Privacy<\/Link>[\s\S]*href="\/terms">Terms<\/Link>/);
   const styles = css();
+  assert.match(styles, /\.footer-container\{[^}]*max-width:1240px[^}]*grid-template-columns:minmax\(0,\.8fr\) minmax\(0,1\.1fr\)/);
   assert.match(styles, /\.footer-navigation\{[^}]*grid-template-columns:repeat\(2,minmax\(0,1fr\)\)/);
+  assert.match(styles, /\.footer-group h2\{[^}]*margin:0 0 \.3rem/);
   assert.match(styles, /\.site-footer \.footer-group a,\.site-footer \.footer-legal a\{[^}]*min-height:44px/);
-  assert.match(styles, /@media\(max-width:600px\)\{\.site-footer\{grid-template-columns:1fr/);
+  assert.match(styles, /@media\(max-width:600px\)\{\.site-footer\{padding:/);
+  assert.match(styles, /@media\(max-width:600px\)[\s\S]*\.footer-container\{grid-template-columns:1fr/);
   assert.match(styles, /@media\(max-width:600px\)[\s\S]*\.footer-navigation\{grid-template-columns:1fr/);
   assert.match(styles, /@media\(max-width:600px\)[\s\S]*\.footer-bottom\{align-items:center;gap:/);
 });
