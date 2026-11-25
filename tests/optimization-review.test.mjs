@@ -96,10 +96,14 @@ test('reviewed homepage and services duplication is absent without changing dest
   assert.match(home, /Dispatch updates, service follow-ups, estimates, and office records are prepared for review/);
   assert.doesNotMatch(home, /workflow-diagram/);
   assert.match(home, /Common office pressure points/);
+  const styles = read('app/globals.css');
+  assert.match(styles, /\.service-grid>\.service-card:nth-child\(3n \+ 1\)\{border-left:1px solid var\(--rule\)\}/);
+  assert.ok(styles.includes('@media(max-width:900px){.service-grid>.service-card:nth-child(3n + 1){border-left:0}.service-grid>.service-card:nth-child(2n + 1){border-left:1px solid var(--rule)}}'));
+  assert.match(styles, /@media\(max-width:600px\)\{\.service-grid>\.service-card:nth-child\(n\)\{border-left:1px solid var\(--rule\)\}\}/);
   assert.doesNotMatch(site, /Specialist remote staff support dispatch records/);
   assert.match(site, /"heroImage": "\/hvac-staffing-operations-team\.jpg"/);
   assert.match(services, /\/hvac-services-workflow\.jpg/);
-  assert.match(read('app/globals.css'), /\.service-directory\{min-width:0\}/);
+  assert.match(styles, /\.service-directory\{min-width:0\}/);
   for (const removed of ['Selection guidance', 'Decision guidance', 'Start where operating context is being lost', 'What makes a workflow ready']) {
     assert.doesNotMatch(services, new RegExp(removed));
   }
