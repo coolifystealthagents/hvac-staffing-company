@@ -10,7 +10,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params; const post = researchBySlug(slug);
   if (!post) return {};
   const guidance = researchGuidanceFor(post.slug);
-  return { title: post.title, description: post.summary, alternates: { canonical: `/research/${post.slug}` }, openGraph: guidance ? { images: [{ url: guidance.artwork.src, alt: guidance.artwork.alt }] } : undefined };
+  const artwork = guidance?.artwork ?? (post.thumbnail ? { src: post.thumbnail, alt: `Editorial illustration for ${post.title}` } : undefined);
+  return {
+    title: post.title,
+    description: post.summary,
+    alternates: { canonical: `/research/${post.slug}` },
+    openGraph: artwork ? { type: 'article', title: post.title, description: post.summary, images: [{ url: artwork.src, alt: artwork.alt }] } : undefined,
+  };
 }
 export default async function ResearchPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params; const post = researchBySlug(slug); if (!post) notFound();

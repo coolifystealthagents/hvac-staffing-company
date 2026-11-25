@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 const root = new URL('..', import.meta.url).pathname;
@@ -25,7 +25,14 @@ function serviceRecords() {
     else if (character === '{') depth += 1;
     else if (character === '}') {
       depth -= 1;
-      if (depth === 0) return JSON.parse(source.slice(objectStart, index + 1)).services;
+      if (depth === 0) {
+        const configured = JSON.parse(source.slice(objectStart, index + 1)).services;
+        const additional = JSON.parse(read('lib/additional-services.json'));
+        return [...configured, ...additional].map((service) => ({
+          ...service,
+          heroImage: `/optimization/${service.slug}.webp`,
+        }));
+      }
     }
   }
   assert.fail('site config object has balanced JSON braces');
@@ -38,6 +45,8 @@ const expectedSlugs = [
   'customer-service',
   'parts-warranty-admin',
   'hvac-bookkeeping-support',
+  'installation-coordination',
+  'service-agreement-administration',
 ];
 
 const specificity = {
@@ -47,6 +56,8 @@ const specificity = {
   'customer-service': /customer|caller/i,
   'parts-warranty-admin': /part|claim|warranty/i,
   'hvac-bookkeeping-support': /transaction|ledger|invoice|bookkeeping/i,
+  'installation-coordination': /installation|access|material|schedule/i,
+  'service-agreement-administration': /agreement|signature|scope|renewal/i,
 };
 
 const sections = [
@@ -61,12 +72,13 @@ const sections = [
 
 const sectionText = (manual, section) => manual[section].join(' ');
 
-test('site defines exactly six complete service operating records', () => {
+test('site defines exactly eight complete service operating records', () => {
   const services = serviceRecords();
   assert.deepEqual(services.map(({ slug }) => slug), expectedSlugs);
 
   for (const service of services) {
-    assert.match(service.heroImage, /^\/editorial\/.+\.svg$/, `${service.slug} has route-specific workflow hero art`);
+    assert.match(service.heroImage, /^\/optimization\/.+\.webp$/, `${service.slug} has route-specific service photography`);
+    assert.ok(existsSync(join(root, 'public', service.heroImage.slice(1))), `${service.slug} image exists`);
     assert.ok(service.heroAlt.length >= 30, `${service.slug} has descriptive hero alt text`);
     assert.ok(service.manual, `${service.slug} has a manual`);
     assert.ok(service.manual.roleFit.length >= 2, `${service.slug} has specific role fit`);
@@ -83,18 +95,18 @@ test('site defines exactly six complete service operating records', () => {
       assert.match(`${faq.q} ${faq.a}`, specificity[service.slug], `${service.slug} FAQ is service-specific`);
     }
   }
-  assert.equal(new Set(services.map(({ heroImage }) => heroImage)).size, 6, 'service hero artwork must be unique');
+  assert.equal(new Set(services.map(({ heroImage }) => heroImage)).size, 8, 'service hero artwork must be unique');
 });
 
 test('every operating section is meaningfully unique across services', () => {
   const services = serviceRecords();
   for (const section of [...sections, 'roleFit', 'problem']) {
     const bodies = services.map(({ manual }) => sectionText(manual, section).toLowerCase());
-    assert.equal(new Set(bodies).size, 6, `${section} must have six distinct records`);
+    assert.equal(new Set(bodies).size, 8, `${section} must have eight distinct records`);
   }
 
   const questionSets = services.map(({ manual }) => manual.faqs.map(({ q }) => q.toLowerCase()).join('|'));
-  assert.equal(new Set(questionSets).size, 6, 'FAQ questions must be distinct by service');
+  assert.equal(new Set(questionSets).size, 8, 'FAQ questions must be distinct by service');
   assert.equal(new Set(questionSets.flatMap((set) => set.split('|'))).size, questionSets.reduce((count, set) => count + set.split('|').length, 0), 'FAQ questions must not be reused between services');
 });
 

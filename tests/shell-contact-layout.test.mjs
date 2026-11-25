@@ -20,6 +20,7 @@ const routeShells = [
   'app/thanks-whats-next/page.tsx',
   'components/ArticleFrame.tsx',
   'components/Marketing.tsx',
+  'components/ResearchIndex.tsx',
 ];
 
 test('root layout owns the sole main landmark and preserves the skip-link target', () => {

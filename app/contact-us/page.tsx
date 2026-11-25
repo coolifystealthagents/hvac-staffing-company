@@ -9,6 +9,12 @@ export const metadata: Metadata = {
   title: 'Contact Us | HVAC Staffing Consultation',
   description: 'Map a controlled HVAC office support role with clear inputs, outputs, review points, and decision boundaries.',
   alternates: { canonical: '/contact-us' },
+  openGraph: {
+    type: 'website',
+    title: 'Contact Us | HVAC Staffing Company',
+    description: 'Map a controlled HVAC office support role with clear inputs, outputs, review points, and decision boundaries.',
+    images: [{ url: '/hvac-approved-handoff-review.jpg', alt: 'Illustrative HVAC dispatch handoff and records review' }],
+  },
 };
 
 const faqs = [
@@ -25,26 +31,30 @@ export default function ContactPage() {
         <h1>Build the office system your field team can rely on.</h1>
         <p>Bring the recurring queue that consumes owner or manager attention. We will map a focused remote role while technical, safety, and approval authority stays with your HVAC team.</p>
         <div className="scope-labels"><span>Clear role boundaries</span><span>Business email required</span><span>No scheduler on this page</span></div>
-        <div className="reviews-heading"><strong>StealthAgents reviews</strong><span>Approved first-party client feedback · Source-displayed rating: 5 out of 5</span></div>
-        <div className="review-window" aria-label="StealthAgents reviews">
-          <div className="review-rail">
-            <div className="review-sequence">
-              {provenance.records.map((review) => <article className="review-card" key={review.name} tabIndex={0}>
-                <h2>{review.headline}</h2><p>“{review.body}”</p><footer><strong>{review.name}</strong><span>{review.detail}</span></footer>
-              </article>)}
-            </div>
-            <div className="review-sequence" aria-hidden="true">
-              {provenance.records.map((review) => <article className="review-card" key={`duplicate-${review.name}`}>
-                <h2>{review.headline}</h2><p>“{review.body}”</p><footer><strong>{review.name}</strong><span>{review.detail}</span></footer>
-              </article>)}
-            </div>
-          </div>
-        </div>
+        <div className="consultation-outline"><strong>A focused first conversation</strong><ul><li>Choose one recurring queue and name its current owner.</li><li>Clarify the output, source records, and review point.</li><li>Keep technical, safety, and approval decisions with your HVAC team.</li></ul></div>
       </div>
       <div className="contact-form-card" aria-labelledby="consultation-title">
         <p className="kicker">Start with the workflow</p><h2 id="consultation-title">Request a free consultation</h2>
         <p>Share only business contact and staffing context. Do not include credentials or customer payment details.</p>
         <LeadForm source="contact-page-consultation" />
+      </div>
+    </section>
+
+    <section className="contact-reviews" aria-label="Approved StealthAgents client reviews">
+      <div className="reviews-heading"><strong>StealthAgents reviews</strong><span>Approved first-party client feedback · Source-displayed rating: 5 out of 5</span></div>
+      <div className="review-window">
+        <div className="review-rail">
+          <div className="review-sequence">
+            {provenance.records.map((review) => <article className="review-card" key={review.name} tabIndex={0}>
+              <h2>{review.headline}</h2><p>“{review.body}”</p><footer><strong>{review.name}</strong><span>{review.detail}</span></footer>
+            </article>)}
+          </div>
+          <div className="review-sequence" aria-hidden="true">
+            {provenance.records.map((review) => <article className="review-card" key={`duplicate-${review.name}`}>
+              <h2>{review.headline}</h2><p>“{review.body}”</p><footer><strong>{review.name}</strong><span>{review.detail}</span></footer>
+            </article>)}
+          </div>
+        </div>
       </div>
     </section>
 
