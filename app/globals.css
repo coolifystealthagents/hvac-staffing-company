@@ -74,3 +74,8 @@ header .brand>span{min-width:0}header nav{margin-left:auto}
 
 .consultation-outline{max-width:680px;margin-top:1.25rem;border-left:4px solid var(--orange);padding:.2rem 0 .2rem 1rem}.consultation-outline strong{display:block;margin-bottom:.35rem}.consultation-outline ul{margin:0;padding-left:1.1rem}.consultation-outline li{margin:.2rem 0;font-size:.9rem}
 .contact-reviews{background:var(--ink);color:#fff;padding:2.5rem 5vw;overflow:hidden}.contact-reviews>.reviews-heading,.contact-reviews>.review-window{max-width:1500px;margin-left:auto;margin-right:auto}.contact-reviews>.reviews-heading{margin-bottom:1rem}
+
+/* Keep the homepage role grid's leading rule aligned with its existing dividers. */
+.service-grid>.service-card:nth-child(3n + 1){border-left:1px solid var(--rule)}
+@media(max-width:900px){.service-grid>.service-card:nth-child(3n + 1){border-left:0}.service-grid>.service-card:nth-child(2n + 1){border-left:1px solid var(--rule)}}
+@media(max-width:600px){.service-grid>.service-card:nth-child(n){border-left:1px solid var(--rule)}}
