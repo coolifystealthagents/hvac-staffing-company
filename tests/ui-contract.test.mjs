@@ -75,13 +75,15 @@ test('narrow header has a dedicated 390px-safe responsive contract', () => {
   const styles = css();
   assert.match(styles, /@media\(max-width:420px\)/);
   assert.match(styles, /@media\(max-width:420px\)[\s\S]*\.site-header\{[^}]*gap:\.5rem/);
-  assert.match(styles, /@media\(max-width:420px\)[\s\S]*\.site-header \.brand span\{display:none\}/);
+  assert.match(styles, /@media\(max-width:420px\)[\s\S]*\.site-header \.brand span\{display:block;max-width:94px/);
+  assert.match(styles, /@media\(max-width:420px\)[\s\S]*\.standard-brand-credit\{display:none!important\}/);
   assert.match(styles, /@media\(max-width:420px\)[\s\S]*\.global-header-cta\{[^}]*padding:/);
 });
 
-test('390px parent attribution remains fully readable', () => {
+test('390px keeps the business name visible and parent attribution in the footer', () => {
   const styles = css();
-  assert.match(styles, /@media\(max-width:420px\)[\s\S]*\.site-header \.powered\{[^}]*font-size:\.45rem[^}]*letter-spacing:\.02em/);
+  assert.match(styles, /@media\(max-width:420px\)[\s\S]*\.site-header \.brand span\{display:block;max-width:94px/);
+  assert.match(chrome(), /Powered by StealthAgents/);
 });
 
 test('three-column article grids permit cards to shrink without viewport overflow', () => {

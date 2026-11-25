@@ -8,7 +8,12 @@ import { serviceBySlug } from '@/lib/content';
 export function generateStaticParams() { return site.services.map(({ slug }) => ({ slug })); }
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params; const service = serviceBySlug(slug);
-  return service ? { title: service.name, description: service.short, alternates: { canonical: `/services/${service.slug}` } } : {};
+  return service ? {
+    title: service.name,
+    description: service.short,
+    alternates: { canonical: `/services/${service.slug}` },
+    openGraph: { type: 'website', title: `${service.name} | HVAC Staffing Company`, description: service.short, images: [{ url: service.heroImage, alt: service.heroAlt }] },
+  } : {};
 }
 
 export default async function ServicePage({ params }: { params: Promise<{ slug: string }> }) {

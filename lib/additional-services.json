@@ -11,59 +11,61 @@
     ],
     "heroImage": "/optimization/installation-coordination.webp",
     "heroAlt": "Field professional reviewing a clipboard at a work site",
-    "manual": {
-      "roleFit": [
-        "HVAC businesses with a named installation or service-agreement owner and documented administrative procedures.",
-        "Start with one service area or agreement type where the inputs and review standard are clear."
-      ],
-      "problem": [
-        "An installation can be delayed when access instructions, material updates, and customer availability live in separate messages. The support desk keeps those administrative dependencies together."
-      ],
-      "inputsAccess": [
-        "Provide the approved checklist, customer record, calendar or agreement repository, and named escalation owner.",
-        "Use role-based access and written limits for changes, communications, and record retention."
-      ],
-      "workflowSteps": [
-        "Maintain the approved installation calendar",
-        "Confirm customer access and preparation instructions",
-        "Track materials-ready status supplied by your team",
-        "Record schedule changes and unresolved dependencies",
-        "Finish the shift with a dated handoff identifying open questions and the next owner."
-      ],
-      "deliverables": [
-        "A current record with source dates, approved changes, and missing items visible.",
-        "A manager handoff covering pending customer requests, dependencies, and decisions."
-      ],
-      "qualityControls": [
-        "Confirm customer, job or agreement identifier, source version, and approved dates before updating the record.",
-        "Review a sample against the source and investigate repeated missing fields rather than guessing."
-      ],
-      "exceptionPaths": [
-        "Escalate conflicting dates, unclear scope, missing approvals, customer complaints, and requests outside the written rules.",
-        "Urgent safety reports follow the company emergency procedure and never wait in a routine administration queue."
-      ],
-      "decisionBoundaries": [
-        "Technical scope, installation design, safety, coverage interpretation, price, payment, contracts, and customer commitments remain with qualified or authorized staff.",
-        "The assistant prepares records and approved communications; they do not approve exceptions or direct field work."
-      ],
-      "startingScenarios": [
-        "A customer changes the available access window. The assistant records the request and asks the installation manager to approve the revised schedule before confirming it.",
-        "Begin with a small documented queue and manager review of each completed handoff. Expand only after the source and completion criteria are reliable."
-      ],
-      "faqs": [
-        {
-          "q": "Can the assistant change an installation date or agreement?",
-          "a": "Only an explicitly permitted administrative change may be made under written instructions. Capacity, commercial terms, scope, and exceptions require the authorized manager."
-        },
-        {
-          "q": "Does this include technical advice?",
-          "a": "No. Diagnosis, equipment selection, installation methods, safety advice, and technical approvals stay with qualified HVAC staff."
-        },
-        {
-          "q": "What does the manager receive?",
-          "a": "A dated record of completed work, source references, missing items, and customer questions that need a decision."
-        }
-      ]
+      "manual": {
+        "roleFit": [
+          "This lane fits HVAC installation managers coordinating approved jobs while retaining authority over crew capacity, scope, safety, and date changes.",
+          "Start when each installation has a named lead, an approved calendar entry, and a documented readiness checklist for customer access and prerequisites."
+        ],
+        "problem": [
+          "Access instructions, customer availability, permit status, and materials-ready updates can arrive in separate records. Without a shared installation queue, the manager has to reconstruct readiness from messages.",
+          "Installation coordination keeps each administrative dependency attached to the work order and identifies the person who must resolve it before the next approved step."
+        ],
+        "inputsAccess": [
+          "Provide the installation work order, approved calendar, manager-reviewed date, site contact, customer access notes, readiness checklist, and permit or materials status from the authorized owner.",
+          "Use role-based calendar and work-order access, approved preparation messages, and a named installation manager for date conflicts, missing approvals, and readiness exceptions."
+        ],
+        "workflowSteps": [
+          "Match each installation request to its approved work order, installation lead, and current calendar entry.",
+          "Check the readiness fields for site access, customer preparation, permit status, and material readiness against the named source for each field.",
+          "Send only the approved customer access or preparation notice and record its date, channel, and source template.",
+          "Record schedule or readiness updates supplied by authorized owners without changing crew assignments or treating a requested date as confirmed.",
+          "Route conflicting dates, missing prerequisites, and unconfirmed dependencies to the installation manager with the affected job record.",
+          "Close the shift with each open installation, its next action, source time, and named owner visible in the handoff."
+        ],
+        "deliverables": [
+          "An installation readiness queue keyed by work-order ID, showing the approved date, access status, prerequisites, source time, and next owner.",
+          "A manager exception summary for missing permits, materials updates, customer access details, or schedule approval."
+        ],
+        "qualityControls": [
+          "Match every installation calendar change to a dated instruction from the authorized installation manager and preserve the previous approved date in the record history.",
+          "Before handoff, confirm each readiness status has a named source and timestamp; leave unknown permit or materials states open instead of inferring completion."
+        ],
+        "exceptionPaths": [
+          "Route conflicting installation dates, missing scope approvals, permit questions, customer complaints, and material delays to the named installation manager.",
+          "Send urgent site safety reports through the company's emergency procedure; do not leave them in the routine installation scheduling queue."
+        ],
+        "decisionBoundaries": [
+          "The assistant may update installation records from approved sources and send approved preparation messages, but cannot confirm unapproved dates, assign crews, certify readiness, interpret permits, or direct field work.",
+          "Installation design, equipment selection, technical scope, safety, contract terms, price, and customer commitments remain with qualified or authorized staff."
+        ],
+        "startingScenarios": [
+          "Start with one service area's approved installation calendar for a week; reconcile access details and materials status while the installation manager approves every date change.",
+          "Pilot the readiness checklist on a small set of scheduled installations and return missing permit or material evidence to its source owner before marking a prerequisite complete."
+        ],
+        "faqs": [
+          {
+            "q": "Can installation scheduling support confirm a new customer date?",
+            "a": "It can record a requested date and prepare the calendar update, but only the installation manager can confirm capacity and approve the revised date."
+          },
+          {
+            "q": "Who verifies that materials are ready for an installation?",
+            "a": "The assistant records the materials-ready status supplied by the designated operations or warehouse owner and routes a missing confirmation to that owner."
+          },
+          {
+            "q": "Can the assistant decide that an installation is ready to proceed?",
+            "a": "No. The assistant checks the documented readiness fields and shows missing evidence; the authorized installation lead makes the readiness decision."
+          }
+        ]
     }
   },
   {
@@ -78,59 +80,61 @@
     ],
     "heroImage": "/optimization/service-agreement-administration.webp",
     "heroAlt": "Professional holding organized document folders",
-    "manual": {
-      "roleFit": [
-        "HVAC businesses with a named installation or service-agreement owner and documented administrative procedures.",
-        "Start with one service area or agreement type where the inputs and review standard are clear."
-      ],
-      "problem": [
-        "Agreement records are difficult to use when versions, customer details, and approved scope documents are scattered. Administrative preparation gives the manager a reviewable record."
-      ],
-      "inputsAccess": [
-        "Provide the approved checklist, customer record, calendar or agreement repository, and named escalation owner.",
-        "Use role-based access and written limits for changes, communications, and record retention."
-      ],
-      "workflowSteps": [
-        "Index signed agreements supplied by authorized staff",
-        "Check administrative fields against the approved checklist",
-        "Track missing signatures and document versions",
-        "Route scope and coverage questions to the agreement owner",
-        "Finish the shift with a dated handoff identifying open questions and the next owner."
-      ],
-      "deliverables": [
-        "A current record with source dates, approved changes, and missing items visible.",
-        "A manager handoff covering pending customer requests, dependencies, and decisions."
-      ],
-      "qualityControls": [
-        "Confirm customer, job or agreement identifier, source version, and approved dates before updating the record.",
-        "Review a sample against the source and investigate repeated missing fields rather than guessing."
-      ],
-      "exceptionPaths": [
-        "Escalate conflicting dates, unclear scope, missing approvals, customer complaints, and requests outside the written rules.",
-        "Urgent safety reports follow the company emergency procedure and never wait in a routine administration queue."
-      ],
-      "decisionBoundaries": [
-        "Technical scope, installation design, safety, coverage interpretation, price, payment, contracts, and customer commitments remain with qualified or authorized staff.",
-        "The assistant prepares records and approved communications; they do not approve exceptions or direct field work."
-      ],
-      "startingScenarios": [
-        "A customer asks whether an additional unit is included. The assistant supplies the existing agreement record to the authorized manager and logs the question without interpreting coverage.",
-        "Begin with a small documented queue and manager review of each completed handoff. Expand only after the source and completion criteria are reliable."
-      ],
-      "faqs": [
-        {
-          "q": "Can the assistant change an installation date or agreement?",
-          "a": "Only an explicitly permitted administrative change may be made under written instructions. Capacity, commercial terms, scope, and exceptions require the authorized manager."
-        },
-        {
-          "q": "Does this include technical advice?",
-          "a": "No. Diagnosis, equipment selection, installation methods, safety advice, and technical approvals stay with qualified HVAC staff."
-        },
-        {
-          "q": "What does the manager receive?",
-          "a": "A dated record of completed work, source references, missing items, and customer questions that need a decision."
-        }
-      ]
+      "manual": {
+        "roleFit": [
+          "This lane fits HVAC service managers or contract administrators who maintain executed service agreements, approved amendments, and renewal records in a named system of record.",
+          "Start with one agreement type where the contract owner has documented which fields may be checked administratively and which terms require interpretation."
+        ],
+        "problem": [
+          "Signed service agreements, addenda, equipment schedules, and renewal dates can be stored in different places, making it difficult to identify the current approved version for a customer or site.",
+          "Agreement administration creates a version-linked record and routes missing signatures, changed scope, and customer term questions to the named agreement owner."
+        ],
+        "inputsAccess": [
+          "Provide executed agreements and amendments, customer and site identifiers, approved agreement templates, effective and renewal dates, the agreement repository, and the administrative field checklist.",
+          "Grant role-based access to the approved records and customer contact templates; name the contract owner for scope, coverage, pricing, cancellation, and retention decisions."
+        ],
+        "workflowSteps": [
+          "Confirm the customer, service location, agreement identifier, and authorized source before opening an agreement record.",
+          "Index the signed agreement and each approved amendment as separate, dated versions; do not replace the prior agreement file.",
+          "Check administrative fields such as signatures, identifiers, document date, and listed site against the approved checklist.",
+          "Add owner-approved effective, renewal, and notice dates to the agreement register and place upcoming actions in the review queue.",
+          "Send only approved receipt or renewal communications, record the source version and contact attempt, and route term questions to the agreement owner.",
+          "Hand off missing signatures, conflicting versions, and unreviewed scope changes with the next action and named contract owner."
+        ],
+        "deliverables": [
+          "A version-linked agreement register with customer, service site, signed document, approved amendments, effective date, renewal date, and owner.",
+          "A renewal and documentation queue showing missing signatures, pending amendments, upcoming owner review, and customer questions."
+        ],
+        "qualityControls": [
+          "Reconcile every agreement-register change to the signed source or an amendment approved by the named contract owner; retain the prior version and date.",
+          "Sample records for matching customer and site identifiers, signature status, version ordering, and renewal dates before a reminder is sent."
+        ],
+        "exceptionPaths": [
+          "Pause an agreement update when signed versions conflict, a required signature is missing, a listed site or unit differs, or a customer disputes the recorded term.",
+          "Route scope, coverage, price, cancellation, renewal exception, and legal interpretation questions to the authorized agreement owner or qualified adviser."
+        ],
+        "decisionBoundaries": [
+          "The assistant may index signed agreements, check listed administrative fields, and send approved notices; it may not interpret coverage, modify contract terms, approve an amendment, or promise a renewal outcome.",
+          "Contract scope, equipment coverage, pricing, credit, cancellation, legal interpretation, and customer commitments remain with the authorized agreement owner or qualified professional."
+        ],
+        "startingScenarios": [
+          "Start by indexing signed service agreements for one service area, linking each current version and approved amendment to its customer and site record.",
+          "Pilot the upcoming renewal queue for one month; prepare approved reminders and route every disputed term or missing signature to the contract owner."
+        ],
+        "faqs": [
+          {
+            "q": "Can the assistant decide whether a repair is covered by an agreement?",
+            "a": "No. The assistant can retrieve the signed agreement and log the question, while the authorized agreement owner determines how its terms apply."
+          },
+          {
+            "q": "How are amendments kept separate from the original agreement?",
+            "a": "Each signed amendment is indexed as its own dated version and linked to the agreement; the prior file remains available for review."
+          },
+          {
+            "q": "Who approves a renewal reminder or agreement change?",
+            "a": "The agreement owner approves the applicable term and any change; support sends only the approved reminder or records the signed change."
+          }
+        ]
     }
   }
 ]

@@ -4,7 +4,17 @@ import Link from 'next/link';
 import { site } from '@/lib/site';
 import { ArrowIcon } from '@/components/Icons';
 
-export const metadata: Metadata = { title: 'HVAC Office Staffing Services', description: `Explore remote support roles shaped for ${site.audience}.`, alternates: { canonical: '/services' } };
+export const metadata: Metadata = {
+  title: 'HVAC Office Staffing Services',
+  description: `Explore remote support roles shaped for ${site.audience}.`,
+  alternates: { canonical: '/services' },
+  openGraph: {
+    type: 'website',
+    title: 'HVAC Office Staffing Services | HVAC Staffing Company',
+    description: `Explore remote support roles shaped for ${site.audience}.`,
+    images: [{ url: '/hvac-services-workflow.jpg', alt: 'HVAC service manager and operations coordinator mapping a dispatch workflow at a workshop table' }],
+  },
+};
 
 export default function ServicesPage() {
   return <div>

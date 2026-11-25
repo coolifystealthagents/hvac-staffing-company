@@ -26,7 +26,7 @@ export function HomePage() {
   const design = site.design;
   return <div className={`home design-${design}`}>
     <section className="hero">
-      <div className="hero-copy"><p className="eyebrow">{site.eyebrow}</p><h1>{site.hero} <em>{site.heroAccent}</em></h1><div className="hero-actions"><CTA id="cta-home-hero-bookcall">Map your first workflow</CTA><Link className="quiet-link" href="/services">Compare all eight roles</Link></div><Principles /></div>
+      <div className="hero-copy"><p className="eyebrow">{site.eyebrow}</p><h1>{site.hero} <em>{site.heroAccent}</em></h1><p className="hero-lead">Dispatch updates, service follow-ups, estimates, and office records are prepared for review while qualified people keep decision authority.</p><div className="hero-actions"><CTA id="cta-home-hero-bookcall">Map your first workflow</CTA><Link className="quiet-link" href="/services">Compare all eight roles</Link></div><Principles /></div>
       <div className="hero-visual"><Image src={site.heroImage} alt={site.heroAlt} fill priority sizes="(max-width: 900px) 100vw, 54vw" /><div className="hero-label"><SparkIcon /><span>{site.manifesto}</span></div></div>
     </section>
     {design === 'signal' && <section className="signal-strip" aria-label="Inside sales workflow"><span>Prospecting support</span><span>CRM hygiene</span><span>Follow through</span><span>Pipeline visibility</span></section>}
