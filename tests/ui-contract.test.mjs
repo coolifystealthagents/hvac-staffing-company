@@ -86,6 +86,21 @@ test('390px keeps the business name visible and parent attribution in the footer
   assert.match(chrome(), /Powered by StealthAgents/);
 });
 
+test('shared footer groups company and resource links and keeps legal links with copyright', () => {
+  const source = chrome();
+  const footer = source.match(/export function Footer\(\)[\s\S]*?<\/footer>/)?.[0] ?? '';
+  assert.match(footer, /<h2 id="footer-company-heading">Company<\/h2>[\s\S]*?href="\/">Home<\/Link>[\s\S]*?href="\/about">About<\/Link>[\s\S]*?href="\/contact-us">Contact Us<\/Link>/);
+  assert.match(footer, /<h2 id="footer-resources-heading">Resources<\/h2>[\s\S]*?href="\/services">Services<\/Link>[\s\S]*?href="\/blog">Blog<\/Link>[\s\S]*?href="\/research">Research<\/Link>/);
+  assert.match(footer, /Map your first workflow<\/Link>/);
+  assert.match(footer, /className="footer-bottom">[\s\S]*className="copyright"[\s\S]*href="\/privacy">Privacy<\/Link>[\s\S]*href="\/terms">Terms<\/Link>/);
+  const styles = css();
+  assert.match(styles, /\.footer-navigation\{[^}]*grid-template-columns:repeat\(2,minmax\(0,1fr\)\)/);
+  assert.match(styles, /\.site-footer \.footer-group a,\.site-footer \.footer-legal a\{[^}]*min-height:44px/);
+  assert.match(styles, /@media\(max-width:600px\)\{\.site-footer\{grid-template-columns:1fr/);
+  assert.match(styles, /@media\(max-width:600px\)[\s\S]*\.footer-navigation\{grid-template-columns:1fr/);
+  assert.match(styles, /@media\(max-width:600px\)[\s\S]*\.footer-bottom\{align-items:center;gap:/);
+});
+
 test('three-column article grids permit cards to shrink without viewport overflow', () => {
   const styles = css();
   assert.match(styles, /\.article-grid,\.content-grid\{[^}]*grid-template-columns:repeat\(3,minmax\(0,1fr\)\)/);
