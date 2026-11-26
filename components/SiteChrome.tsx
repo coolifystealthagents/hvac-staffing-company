@@ -61,25 +61,36 @@ export function Header() {
 export function Footer() {
   return <footer className="site-footer">
     <div className="footer-container">
-      <div className="footer-brand">
-        <Link className="brand inverse" href="/"><Image src="/logo.svg" alt="" width={48} height={48} /><span>{site.name}</span></Link>
-        <p>Remote office staffing systems for HVAC owners and service managers.</p>
-        <strong>Powered by StealthAgents</strong>
-        <Link className="button primary" href="/contact-us">Map your first workflow</Link>
-      </div>
-      <div className="footer-navigation">
-        <nav className="footer-group" aria-labelledby="footer-company-heading">
-          <h2 id="footer-company-heading">Company</h2>
-          <ul><li><Link href="/">Home</Link></li><li><Link href="/about">About</Link></li><li><Link href="/contact-us">Contact Us</Link></li></ul>
+      <div className="footer-main">
+        <div className="footer-brand">
+          <Link className="brand inverse" href="/"><Image src="/logo.svg" alt="" width={48} height={48} /><span>{site.name}</span></Link>
+          <p className="footer-powered">Powered by StealthAgents</p>
+          <p className="footer-description">Remote office staffing systems for HVAC owners and service managers.</p>
+          <Link className="button primary" href="/contact-us">Map your first workflow</Link>
+        </div>
+        <nav className="footer-group" aria-labelledby="footer-services-heading">
+          <h2 id="footer-services-heading">Services</h2>
+          <ul>{site.services.map((service) => <li key={service.slug}><Link href={`/services/${service.slug}`}>{service.name}</Link></li>)}</ul>
         </nav>
-        <nav className="footer-group" aria-labelledby="footer-resources-heading">
-          <h2 id="footer-resources-heading">Resources</h2>
-          <ul><li><Link href="/services">Services</Link></li><li><Link href="/blog">Blog</Link></li><li><Link href="/research">Research</Link></li></ul>
+        <nav className="footer-group" aria-labelledby="footer-explore-heading">
+          <h2 id="footer-explore-heading">Explore</h2>
+          <ul><li><Link href="/">Home</Link></li><li><Link href="/about">About</Link></li><li><Link href="/blog">Blog</Link></li><li><Link href="/research">Research</Link></li><li><Link href="/contact-us">Contact Us</Link></li></ul>
         </nav>
       </div>
+      <section className="footer-parent" aria-label="Parent company">
+        <div className="footer-logo-plate"><Image src="/stealth-agents-logo-black.png" alt="StealthAgents logo" width={149} height={50} /></div>
+        <div className="footer-parent-copy">
+          <p className="footer-parent-label">Parent Company</p>
+          <p>StealthAgents supports recruiting, matching, and managed staffing operations. HVAC Staffing Company keeps the role centered on HVAC office workflows, while your business retains technical, financial, safety, and customer approval authority.</p>
+          <a className="footer-parent-link" href="https://stealthagents.com/" target="_blank" rel="noopener noreferrer">Powered by StealthAgents <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
       <div className="footer-bottom">
         <p className="copyright">© {new Date().getFullYear()} {site.name}</p>
-        <nav className="footer-legal" aria-label="Legal"><Link href="/privacy">Privacy</Link><Link href="/terms">Terms</Link></nav>
+        <div className="footer-bottom-links">
+          <nav className="footer-legal" aria-label="Legal"><Link href="/privacy">Privacy</Link><Link href="/terms">Terms</Link></nav>
+          <Link className="footer-domain" href="/">hvacstaffingcompany.com</Link>
+        </div>
       </div>
     </div>
   </footer>;
