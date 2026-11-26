@@ -86,22 +86,32 @@ test('390px keeps the business name visible and parent attribution in the footer
   assert.match(chrome(), /Powered by StealthAgents/);
 });
 
-test('shared footer groups company and resource links and keeps legal links with copyright', () => {
+test('shared footer preserves HVAC services, parent attribution, CTA, and legal links', () => {
   const source = chrome();
   const footer = source.match(/export function Footer\(\)[\s\S]*?<\/footer>/)?.[0] ?? '';
-  assert.match(footer, /<h2 id="footer-company-heading">Company<\/h2>[\s\S]*?href="\/">Home<\/Link>[\s\S]*?href="\/about">About<\/Link>[\s\S]*?href="\/contact-us">Contact Us<\/Link>/);
-  assert.match(footer, /<h2 id="footer-resources-heading">Resources<\/h2>[\s\S]*?href="\/services">Services<\/Link>[\s\S]*?href="\/blog">Blog<\/Link>[\s\S]*?href="\/research">Research<\/Link>/);
+  assert.match(footer, /<h2 id="footer-services-heading">Services<\/h2>/);
+  assert.ok(footer.includes('site.services.map((service) => <li key={service.slug}><Link href={`/services/${service.slug}`}>{service.name}</Link></li>)'));
+  assert.match(footer, /<h2 id="footer-explore-heading">Explore<\/h2>[\s\S]*?href="\/">Home<\/Link>[\s\S]*?href="\/about">About<\/Link>[\s\S]*?href="\/blog">Blog<\/Link>[\s\S]*?href="\/research">Research<\/Link>[\s\S]*?href="\/contact-us">Contact Us<\/Link>/);
   assert.match(footer, /Map your first workflow<\/Link>/);
-  assert.match(footer, /className="footer-bottom">[\s\S]*className="copyright"[\s\S]*href="\/privacy">Privacy<\/Link>[\s\S]*href="\/terms">Terms<\/Link>/);
+  assert.match(footer, /Powered by StealthAgents<\/p>/);
+  assert.match(footer, /stealth-agents-logo-black\.png/);
+  assert.match(footer, /Parent Company/);
+  assert.match(footer, /StealthAgents supports recruiting, matching, and managed staffing operations/);
+  assert.match(footer, /href="https:\/\/stealthagents\.com\/" target="_blank" rel="noopener noreferrer">Powered by StealthAgents <span aria-hidden="true">↗/);
+  assert.match(footer, /className="footer-bottom">[\s\S]*className="copyright"[\s\S]*href="\/privacy">Privacy<\/Link>[\s\S]*href="\/terms">Terms<\/Link>[\s\S]*hvacstaffingcompany\.com/);
   const styles = css();
-  assert.match(styles, /\.footer-container\{[^}]*max-width:1240px[^}]*grid-template-columns:minmax\(0,\.8fr\) minmax\(0,1\.1fr\)/);
-  assert.match(styles, /\.footer-navigation\{[^}]*grid-template-columns:repeat\(2,minmax\(0,1fr\)\)/);
-  assert.match(styles, /\.footer-group h2\{[^}]*margin:0 0 \.3rem/);
-  assert.match(styles, /\.site-footer \.footer-group a,\.site-footer \.footer-legal a\{[^}]*min-height:44px/);
+  assert.match(styles, /\.footer-container\{[^}]*max-width:1240px/);
+  assert.match(styles, /\.footer-main\{[^}]*grid-template-columns:minmax\(0,1\.25fr\) minmax\(0,\.8fr\) minmax\(0,\.8fr\)/);
+  assert.match(styles, /\.site-footer \.footer-group a\{[^}]*min-height:44px/);
+  assert.match(styles, /\.footer-parent\{[^}]*border-top:1px solid/);
+  assert.match(styles, /@media\(max-width:900px\)[\s\S]*\.footer-parent\{grid-template-columns:minmax\(180px,\.65fr\)/);
+  assert.match(styles, /\.footer-logo-plate\{[^}]*background:#fff[^}]*border-radius:10px/);
+  assert.match(styles, /\.footer-bottom\{[^}]*border-top:1px solid/);
+  assert.match(styles, /\.site-footer \.copyright\{[^}]*padding:0;border:0/);
+  assert.match(styles, /@media\(max-width:900px\)\{\.footer-main\{grid-template-columns:repeat\(2,minmax\(0,1fr\)/);
   assert.match(styles, /@media\(max-width:600px\)\{\.site-footer\{padding:/);
-  assert.match(styles, /@media\(max-width:600px\)[\s\S]*\.footer-container\{grid-template-columns:1fr/);
-  assert.match(styles, /@media\(max-width:600px\)[\s\S]*\.footer-navigation\{grid-template-columns:1fr/);
-  assert.match(styles, /@media\(max-width:600px\)[\s\S]*\.footer-bottom\{align-items:center;gap:/);
+  assert.match(styles, /@media\(max-width:600px\)[\s\S]*\.footer-main\{grid-template-columns:1fr/);
+  assert.match(styles, /@media\(max-width:600px\)[\s\S]*\.footer-parent\{grid-template-columns:1fr/);
 });
 
 test('three-column article grids permit cards to shrink without viewport overflow', () => {
