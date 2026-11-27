@@ -46,7 +46,7 @@ export function Header() {
 
   return <>
     <a className="skip-link" href="#main-content">Skip to content</a>
-    <header className="site-header">
+    <header data-site-header="sticky" className="site-header">
       <Link className="brand" href="/" aria-label={`${site.name} home`}><Image src="/logo.svg" alt="" width={42} height={42} priority /><span>{site.name}<small className="standard-brand-credit">Powered by Stealth Agents</small></span></Link>
 
       <button ref={buttonRef} className="menu-toggle" type="button" aria-expanded={open} aria-controls="primary-navigation" onClick={() => setOpen((value) => !value)}><span aria-hidden="true">Menu</span><span className="sr-only">Toggle primary navigation</span></button>
@@ -59,7 +59,7 @@ export function Header() {
 }
 
 export function Footer() {
-  return <footer className="site-footer">
+  return <footer data-site-footer="true" className="site-footer">
     <div className="footer-container">
       <div className="footer-main">
         <div className="footer-brand">
@@ -68,13 +68,13 @@ export function Footer() {
           <p className="footer-description">Remote office staffing systems for HVAC owners and service managers.</p>
           <Link className="button primary" href="/contact-us">Map your first workflow</Link>
         </div>
-        <nav className="footer-group" aria-labelledby="footer-services-heading">
+        <nav data-footer-menu="true" className="footer-group" aria-labelledby="footer-services-heading">
           <h2 id="footer-services-heading">Services</h2>
-          <ul>{site.services.map((service) => <li key={service.slug}><Link href={`/services/${service.slug}`}>{service.name}</Link></li>)}</ul>
+          <ul data-footer-menu="true">{site.services.map((service) => <li key={service.slug}><Link href={`/services/${service.slug}`}>{service.name}</Link></li>)}</ul>
         </nav>
-        <nav className="footer-group" aria-labelledby="footer-explore-heading">
+        <nav data-footer-menu="true" className="footer-group" aria-labelledby="footer-explore-heading">
           <h2 id="footer-explore-heading">Explore</h2>
-          <ul><li><Link href="/">Home</Link></li><li><Link href="/about">About</Link></li><li><Link href="/blog">Blog</Link></li><li><Link href="/research">Research</Link></li><li><Link href="/contact-us">Contact Us</Link></li></ul>
+          <ul data-footer-menu="true"><li><Link href="/">Home</Link></li><li><Link href="/about">About</Link></li><li><Link href="/blog">Blog</Link></li><li><Link href="/research">Research</Link></li><li><Link href="/contact-us">Contact Us</Link></li></ul>
         </nav>
       </div>
       <section className="footer-parent" aria-label="Parent company">
